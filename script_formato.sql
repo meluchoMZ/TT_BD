@@ -15,7 +15,7 @@ COLUMN nome_centro HEADING 'CENTRO' FORMAT A50;
 
 /* Táboa Centros sanitarios - Tipo material */
 /* O formato de id_centro está definido na táboa Centros sanitarios */
-COLUMN tipo_material HEADING 'TIPO DE MATERIAL' FORMAT A15;
+COLUMN tipo_mat HEADING 'TIPO DE MATERIAL' FORMAT A15;
 COLUMN stock_minimo HEADING 'STOCK MÍNIMO' FORMAT 999999;
 COLUMN stock_actual HEADING 'STOCK ACTUAL' FORMAT 999999;
 

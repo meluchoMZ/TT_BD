@@ -13,21 +13,21 @@ INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo)
 	VALUES (35, 'Complexo Hospitalario Universitario', 'A Coruña');
 
 /* En "Centros sanitarios - Tipo material" */
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (1, 'Mascarillas', 5000, 12468);
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (1, 'Luvas', 10000, 26752);
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (1, 'Lentes', 3000, 4527);
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (1, 'Batas', 3000, 5246);
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (35, 'Mascarillas', 7500, 9865);
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (35, 'Luvas', 15000, 34682);
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (35, 'Batas', 4500, 6843);
-INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (35, 'Lentes', 4500, 6138);
 
 /* En "Pacientes" */

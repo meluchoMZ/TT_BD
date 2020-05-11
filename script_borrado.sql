@@ -5,7 +5,7 @@
 */
 
 /* Borrado da táboa "Centros sanitarios" */
-DROP TABLE centros_sanitarios CASCASDE CONSTRAINTS PURGE;
+DROP TABLE centros_sanitarios CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da táboa "Centros sanitarios - Tipo de material" */
 DROP TABLE centro_tipo CASCADE CONSTRAINTS PURGE;
