@@ -26,6 +26,7 @@ CREATE TABLE centro_tipo (
 	tipo_mat VARCHAR(15) CONSTRAINT NN_centro_tipo_tipo_material NOT NULL REFERENCES tipo_material,
 	stock_minimo NUMERIC(6) CONSTRAINT NN_centro_tipo_stock_minimo NOT NULL,
 	stock_actual NUMERIC(6),
+	PRIMARY KEY (id_centro, tipo_mat),
 	CHECK (stock_actual >= stock_minimo)
 );
 
