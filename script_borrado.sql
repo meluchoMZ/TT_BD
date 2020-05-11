@@ -14,4 +14,4 @@ DROP TABLE sanitarios CASCADE CONSTRAINTS PURGE;
 DROP TABLE telefonos_pacientes CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da táboa "Teléfonos_sanitarios" */
-DROP TABLE sanitarios CASCADE CONSTRAINTS PURGE;
+DROP TABLE telefonos_sanitarios CASCADE CONSTRAINTS PURGE;
