@@ -18,7 +18,7 @@ COLUMN enderezo HEADING 'ENDEREZO' FORMAT A40;
 COLUMN data_rexistro HEADING 'DATA DE REXISTRO' FORMAT A22;
 
 /* Táboa Teléfonos_pacientes */
-COLUMN dni_paciente HEADING 'DNI DO PACIENTE' FORMAT A9;
+COLUMN dni_paciente HEADING 'DNI DO PACIENTE' FORMAT A15;
 COLUMN tlf HEADING 'TELÉFONO' FORMAT A9;
 
 /* Táboa Sanitarios */
@@ -27,4 +27,4 @@ COLUMN categoria HEADING 'CATEGORÍA' FORMAT A12;
 
 /* Táboa Teléfonos_sanitarios*/
 /* O formato de tlf xa está definido en Teléfonos_pacientes */
-COLUMN dni_sanitario HEADING 'DNI DO SANITARIO' FORMAT A9;
+COLUMN dni_sanitario HEADING 'DNI DO SANITARIO' FORMAT A15;
