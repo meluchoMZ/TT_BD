@@ -12,6 +12,16 @@ INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo)
 INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo)
 	VALUES (35, 'Complexo Hospitalario Universitario', 'A Coruña');
 
+/* En "Tipo material" */
+INSERT INTO tipo_material (tipo, info) 
+	VALUES ('Mascarillas', 'Parte fundamental dun EPI');
+INSERT INTO tipo_material (tipo, info)
+	VALUES ('Luvas', 'Parte fundamental dun EPI');
+INSERT INTO tipo_material (tipo, info)
+	VALUES ('Lentes', 'Parte fundamental dun EPI');
+INSERT INTO tipo_material (tipo, info)
+	VALUES ('Batas', 'Parte fundamental dun EPI');
+
 /* En "Centros sanitarios - Tipo material" */
 INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 	VALUES (1, 'Mascarillas', 5000, 12468);
@@ -59,13 +69,3 @@ INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 	VALUES ('12345678T', '765681513');
 INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 	VALUES ('98765432Z', '684513518');
-
-/* En "Tipo material" */
-INSERT INTO tipo_material (tipo, info) 
-	VALUES ('Mascarillas', 'Parte fundamental dun EPI');
-INSERT INTO tipo_material (tipo, info)
-	VALUES ('Luvas', 'Parte fundamental dun EPI');
-INSERT INTO tipo_material (tipo, info)
-	VALUES ('Lentes', 'Parte fundamental dun EPI');
-INSERT INTO tipo_material (tipo, info)
-	VALUES ('Batas', 'Parte fundamental dun EPI');
