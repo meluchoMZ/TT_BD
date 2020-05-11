@@ -9,8 +9,8 @@
 /* Creación da táboa "Centros sanitarios" */
 CREATE TABLE centros_sanitarios (
 	id_centro NUMERIC(3) CONSTRAINT PK_centros_sanitarios PRIMARY KEY CONSTRAINT NN_c_s_id_centro NOT NULL,
-	nome_centro VARCHAR(100) CONSTRAINT NN_centros_sanitarios_nome_centro NOT NULL,
-	enderezo VARCHAR(512) CONSTRAINT NN_centros_sanitarios_enderezo NOT NULL
+	nome_centro VARCHAR(100) CONSTRAINT NN_c_s_nome_centro NOT NULL,
+	enderezo VARCHAR(512) CONSTRAINT NN_c_s_enderezo NOT NULL
 );
 
 /* Creación da táboa "Centro sanitario - tipo material" */
