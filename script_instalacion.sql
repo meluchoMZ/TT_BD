@@ -18,7 +18,8 @@ CREATE TABLE centro_tipo (
 	id_centro NUMERIC(3) CONSTRAINT NN_centro_tipo_id_centro NOT NULL REFERENCES centros_sanitarios,
 	tipo_material VARCHAR(15) CONSTRAINT NN_centro_tipo_tipo_material NOT NULL REFERENCES tipo_material,
 	stock_minimo NUMERIC(6) CONSTRAINT NN_centro_tipo_stock_minimo NOT NULL,
-	stock_actual NUMERIC(6) CHECK (stock_actual >= stoc_minimo)
+	stock_actual NUMERIC(6),
+	CHECK (stock_actual >= stoc_minimo)
 );
 
 /* Creación da táboa "Pacientes" */

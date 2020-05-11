@@ -11,7 +11,7 @@ set linesize 200;
 /* Táboa Centros sanitarios */
 /* O formato de enderezo está definido na táboa Táboa pacientes */
 COLUMN id_centro HEADING 'IDENTIFICADOR';
-COLUMN nome_centro HEADING 'CENTRO' FORMAT 50;
+COLUMN nome_centro HEADING 'CENTRO' FORMAT A50;
 
 /* Táboa Centros sanitarios - Tipo material */
 /* O formato de id_centro está definido na táboa Centros sanitarios */
