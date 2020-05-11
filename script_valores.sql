@@ -6,6 +6,30 @@
 
 /* INSERCIÓN DE VALORES NAS TÁBOAS */
 
+/* En "Centros sanitarios" */
+INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo)
+	VALUES (1, 'Hospital Clínico Universitario', 'Santiago de Compostela');
+INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo)
+	VALUES (35, 'Complexo Hospitalario Universitario', 'A Coruña');
+
+/* En "Centros sanitarios - Tipo material" */
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (1, 'Mascarillas', 5000, 12468);
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (1, 'Luvas', 10000, 26752);
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (1, 'Lentes', 3000, 4527);
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (1, 'Batas', 3000, 5246);
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (35, 'Mascarillas', 7500, 9865);
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (35, 'Luvas', 15000, 34682);
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (35, 'Batas', 4500, 6843);
+INSERT INTO centro_tipo (id_centro, tipo_material, stock_minimo, stock_actual)
+	VALUES (35, 'Lentes', 4500, 6138);
+
 /* En "Pacientes" */
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro) 
 	VALUES ('11111111A', 'Alicia', 'Álvarez Ávila', 'Muller', '01/01/1991', 'R/ Alexandre Bóveda Nº 1, A Coruña', '01/01/2020');
@@ -35,3 +59,13 @@ INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 	VALUES ('12345678T', '765681513');
 INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 	VALUES ('98765432Z', '684513518');
+
+/* En "Tipo material" */
+INSERT INTO tipo_material (tipo, info) 
+	VALUES ('Mascarillas', 'Parte fundamental dun EPI');
+INSERT INTO tipo_material (tipo, info)
+	VALUES ('Luvas', 'Parte fundamental dun EPI');
+INSERT INTO tipo_material (tipo, info)
+	VALUES ('Lentes', 'Parte fundamental dun EPI');
+INSERT INTO tipo_material (tipo, info)
+	VALUES ('Batas', 'Parte fundamental dun EPI');

@@ -4,6 +4,12 @@
 	Grupo 2.4
 */
 
+/* Borrado da táboa "Centros sanitarios" */
+DROP TABLE centros_sanitarios CASCASDE CONSTRAINTS PURGE;
+
+/* Borrado da táboa "Centros sanitarios - Tipo de material" */
+DROP TABLE centro_tipo CASCADE CONSTRAINTS PURGE;
+
 /* Borrado da táboa "Pacientes" */
 DROP TABLE pacientes CASCADE CONSTRAINTS PURGE;
 
@@ -15,3 +21,6 @@ DROP TABLE telefonos_pacientes CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da táboa "Teléfonos_sanitarios" */
 DROP TABLE telefonos_sanitarios CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da táboa "Tipo de material" */
+DROP TABLE tipo_material CASCADE CONSTRAINTS PURGE;

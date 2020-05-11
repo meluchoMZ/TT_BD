@@ -6,6 +6,21 @@
 
 /* CREACIÓN DE TÁBOAS */ 
 
+/* Creación da táboa "Centros sanitarios" */
+CREATE TABLE centros_sanitarios (
+	id_centro NUMERIC(3) CONSTRAINT PK_centros_sanitarios PRIMARY KEY CONSTRAINT NN_centros_sanitarios_id_centro NOT NULL,
+	nome_centro VARCHAR(100) CONSTRAINT NN_centros_sanitarios_nome_centro NOT NULL,
+	enderezo VARCHAR(512) CONSTRAINT NN_centros_sanitarios_enderezo NOT NULL
+);
+
+/* Creación da táboa "Centro sanitario - tipo material" */
+CREATE TABLE centro_tipo (
+	id_centro NUMERIC(3) CONSTRAINT NN_centro_tipo_id_centro NOT NULL REFERENCES centros_sanitarios,
+	tipo_material VARCHAR(15) CONSTRAINT NN_centro_tipo_tipo_material NOT NULL REFERENCES tipo_material,
+	stock_minimo NUMERIC(6) CONSTRAINT NN_centro_tipo_stock_minimo NOT NULL,
+	stock_actual NUMERIC(6) CHECK (stock_actual >= stoc_minimo)
+);
+
 /* Creación da táboa "Pacientes" */
 CREATE TABLE pacientes (
 	dni VARCHAR(9) CONSTRAINT PK_pacientes PRIMARY KEY CONSTRAINT NN_pacientes_dni NOT NULL,
@@ -40,4 +55,11 @@ CREATE TABLE telefonos_sanitarios (
 	dni_sanitario VARCHAR(9) REFERENCES sanitarios CONSTRAINT NN_telefonos_sanitarios_dni NOT NULL,
 	tlf VARCHAR(9) CONSTRAINT NN_telefonos_sanitarios_tlf NOT NULL,
 	PRIMARY KEY (dni_sanitario, tlf)
+);
+
+/* Creación da táboa "Tipo material" */
+CREATE TABLE tipo_material (
+	tipo VARCHAR(12) CONSTRAINT PK_tipo_material PRIMARY KEY CONSTRAINT NN_tipo_material_tipo NOT NULL 
+		CHECK ((tipo = 'Mascarillas') OR (tipo = 'Luvas') OR (tipo = 'Lentes') OR (tipo = 'Batas')),
+	info VARCHAR(1024) CONSTRAINT NN_tipo_material_info NOT NULL
 );

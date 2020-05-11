@@ -8,6 +8,18 @@ set pages 50;
 set feed 1;
 set linesize 200;
 
+/* Táboa Centros sanitarios */
+/* O formato de enderezo está definido na táboa Táboa pacientes */
+COLUMN id_centro HEADING 'IDENTIFICADOR';
+COLUMN nome_centro HEADING 'CENTRO' FORMAT 50;
+
+/* Táboa Centros sanitarios - Tipo material */
+/* O formato de id_centro está definido na táboa Centros sanitarios */
+COLUMN tipo_material HEADING 'TIPO DE MATERIAL' FORMAT A15;
+COLUMN stock_minimo HEADING 'STOCK MÍNIMO' FORMAT 999999;
+COLUMN stock_actual HEADING 'STOCK ACTUAL' FORMAT 999999;
+
+
 /* Táboa Pacientes */
 COLUMN dni HEADING 'DNI' FORMAT A9;
 COLUMN nome HEADING 'NOME' FORMAT A15;
@@ -28,3 +40,7 @@ COLUMN categoria HEADING 'CATEGORÍA' FORMAT A12;
 /* Táboa Teléfonos_sanitarios*/
 /* O formato de tlf xa está definido en Teléfonos_pacientes */
 COLUMN dni_sanitario HEADING 'DNI DO SANITARIO' FORMAT A15;
+
+/* Táboa Tipos material */
+COLUMN tipo HEADING 'TIPO DE MATERIAL' FORMAT A17;
+COLUMN info HEADING 'INFORMACIÓN' FORMAT A60;
