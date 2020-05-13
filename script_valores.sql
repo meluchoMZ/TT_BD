@@ -92,4 +92,4 @@ INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
 	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh:mi:ss'), 'Primeira revisión do paciente.', 'Non', '61681664T');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
-	VALUES ('22222222B', to_date('22-04-2020 17:48:00', 'dd-mm-yyyy hh:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomático.', 'Si', '24651384L');
+	VALUES ('22222222B', to_date('22-04-2020 07:48:00', 'dd-mm-yyyy hh:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomático.', 'Si', '24651384L');

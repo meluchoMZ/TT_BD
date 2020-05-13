@@ -73,5 +73,6 @@ CREATE TABLE revisions (
 	descricion VARCHAR(1024) CONSTRAINT NN_revisions_descricion NOT NULL,
 	entrevista VARCHAR(1024),
 	feita VARCHAR(3) CONSTRAINT NN_revisions_feita NOT NULL CHECK ((feita = 'Si') OR (feita = 'Non')),
-	dni_sanitario VARCHAR(9) CONSTRAINT NN_revisions_dni_sanitario NOT NULL REFERENCES sanitarios
+	dni_sanitario VARCHAR(9) CONSTRAINT NN_revisions_dni_sanitario NOT NULL REFERENCES sanitarios,
+	PRIMARY KEY (dni_paciente, data_hora) 
 );
