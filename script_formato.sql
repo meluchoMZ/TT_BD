@@ -47,7 +47,7 @@ COLUMN info HEADING 'INFORMACIÓN' FORMAT A60;
 
 /* Táboa Revisións */ 
 COLUMN dni_paciente HEADING 'PACIENTE' FORMAT A9;
-COLUMN data_hora HEADING 'DATA E HORA';
+COLUMN data_hora HEADING 'DATA E HORA' FORMAT to_char(data_hora, 'dd/mon/yyyy hh:mi:ss');
 COLUMN descricion HEADING 'DESCRICIÓN' FORMAT A50;
 COLUMN entrevista HEADING 'ENTREVISTA' FORMAT A50;
 COLUMN feita HEADING 'FEITA?' FORMAT A6;
