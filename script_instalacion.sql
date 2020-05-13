@@ -69,7 +69,7 @@ CREATE TABLE telefonos_sanitarios (
 /* Creación da táboa "Revisións" */
 CREATE TABLE revisions (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_revisions_dni_paciente NOT NULL REFERENCES pacientes,
-	data_hora DATE CONSTRAINT NN_revisions_data_hora NOT NULL,
+	data_hora SMALLDATETIME CONSTRAINT NN_revisions_data_hora NOT NULL,
 	descricion VARCHAR(1024) CONSTRAINT NN_revisions_descricion NOT NULL,
 	entrevista VARCHAR(1024),
 	feita VARCHAR(3) CONSTRAINT NN_revisions_feita NOT NULL CHECK ((feita = 'Si') OR (feita = 'Non')),
