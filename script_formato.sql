@@ -8,6 +8,9 @@ set pages 50;
 set feed 1;
 set linesize 250;
 
+/* Para controlar os formatos das datas e horas */
+ALTER SESSION SET nls_date_format='dd-Mon-yyyy hh:mi:sspm';
+
 /* Táboa Centros sanitarios */
 /* O formato de enderezo está definido na táboa Táboa pacientes */
 COLUMN id_centro HEADING 'IDENTIFICADOR';
@@ -47,7 +50,7 @@ COLUMN info HEADING 'INFORMACIÓN' FORMAT A60;
 
 /* Táboa Revisións */ 
 COLUMN dni_paciente HEADING 'PACIENTE' FORMAT A9;
-COLUMN data_hora HEADING 'DATA E HORA' FORMAT 'dd/mon/yyyy hh:mi:ss';
+COLUMN data_hora HEADING 'DATA E HORA';
 COLUMN descricion HEADING 'DESCRICIÓN' FORMAT A50;
 COLUMN entrevista HEADING 'ENTREVISTA' FORMAT A50;
 COLUMN feita HEADING 'FEITA?' FORMAT A6;
