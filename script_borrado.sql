@@ -24,3 +24,6 @@ DROP TABLE telefonos_sanitarios CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da táboa "Tipo de material" */
 DROP TABLE tipo_material CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da táboa "Revisións" */
+DROP TABLE revisions CASCADE CONSTRAINTS PURGE;

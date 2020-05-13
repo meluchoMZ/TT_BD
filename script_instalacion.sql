@@ -49,7 +49,7 @@ CREATE TABLE sanitarios (
 	sexo VARCHAR(6) CONSTRAINT NN_sanitarios_sexo NOT NULL CHECK ((sexo = 'Home') OR (sexo = 'Muller')),
 	data_nacemento DATE CONSTRAINT NN_sanitarios_data_nacemento NOT NULL,
 	enderezo VARCHAR(512) CONSTRAINT NN_sanitarios_enderezo NOT NULL,
-	categoria VARCHAR(12) CONSTRAINT NN_sanitarios_categoria NOT NULL CHECK ((categoria = 'Medicina') OR (categoria = 'Enfermería') OR (categoria = 'Paramedicina'))
+	categoria VARCHAR(12) CONSTRAINT NN_sanitarios_categoria NOT NULL CHECK ((categoria = 'Medicina') OR (categoria = 'Enfermaría') OR (categoria = 'Paramedicina'))
 );
 
 /* Creación da táboa "Teléfonos_pacientes" */
@@ -64,4 +64,14 @@ CREATE TABLE telefonos_sanitarios (
 	dni_sanitario VARCHAR(9) REFERENCES sanitarios CONSTRAINT NN_telefonos_sanitarios_dni NOT NULL,
 	tlf VARCHAR(9) CONSTRAINT NN_telefonos_sanitarios_tlf NOT NULL,
 	PRIMARY KEY (dni_sanitario, tlf)
+);
+
+/* Creación da táboa "Revisións" */
+CREATE TABLE revisions (
+	dni_paciente VARCHAR(9) CONSTRAINT NN_revisions_dni_paciente NOT NULL REFERENCES pacientes,
+	data_hora DATE CONSTRAINT NN_revisions_data_hora NOT NULL,
+	descricion VARCHAR(1024) CONSTRAINT NN_revisions_descricion NOT NULL,
+	entrevista VARCHAR(1024),
+	feita VARCHAR(3) CONSTRAINT NN_revisions_feita NOT NULL CHECK ((feita = 'Si') OR (feita = 'Non')),
+	dni_sanitario VARCHAR(9) CONSTRAINT NN_revisions_dni_sanitario NOT NULL REFERENCES sanitarios
 );

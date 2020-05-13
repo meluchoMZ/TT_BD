@@ -6,7 +6,7 @@
 
 set pages 50;
 set feed 1;
-set linesize 200;
+set linesize 250;
 
 /* Táboa Centros sanitarios */
 /* O formato de enderezo está definido na táboa Táboa pacientes */
@@ -44,3 +44,11 @@ COLUMN dni_sanitario HEADING 'DNI DO SANITARIO' FORMAT A15;
 /* Táboa Tipos material */
 COLUMN tipo HEADING 'TIPO DE MATERIAL' FORMAT A17;
 COLUMN info HEADING 'INFORMACIÓN' FORMAT A60;
+
+/* Táboa Revisións */ 
+COLUMN dni_paciente HEADING 'PACIENTE' FORMAT A9;
+COLUMN data_hora HEADING 'DATA E HORA';
+COLUMN descricion HEADING 'DESCRICIÓN' FORMAT A50;
+COLUMN entrevista HEADING 'ENTREVISTA' FORMAT A50;
+COLUMN feita HEADING 'FEITA?' FORMAT A6;
+COLUMN dni_sanitario HEADING 'SANITARIO' FORMAT A9;

@@ -4,6 +4,7 @@
 	Grupo 2.4
 */
 
+@script_borrado.sql
 @script_instalacion.sql 
 @script_formato.sql 
 @script_valores.sql
