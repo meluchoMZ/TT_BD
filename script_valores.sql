@@ -86,10 +86,10 @@ INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 
 /* En "Revisións" */
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
-	VALUES ('11111111A', '31/04/2020 11:35', 'Consulta inicial.', 'O paciente presenta a sintomaloxía xeral.', 'Si', '79865132V');
+	VALUES ('11111111A', '31/04/2020 11:35:00', 'Consulta inicial.', 'O paciente presenta a sintomaloxía xeral.', 'Si', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', '12/05/2020 10:25', 'Primeira revisión do paciente.', 'Non', '79856132V');
+	VALUES ('11111111A', '12/05/2020 10:25:00', 'Primeira revisión do paciente.', 'Non', '79856132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', '19/05/2020 12:00', 'Primeira revisión do paciente.', 'Non', '61681664T');
+	VALUES ('11111111A', '19/05/2020 12:00:00', 'Primeira revisión do paciente.', 'Non', '61681664T');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('22222222B', '22/04/2020 17:48', 'Consulta inicial.', 'Positivo PCR. Asintomático.', 'Si', '24651384L');
+	VALUES ('22222222B', '22/04/2020 17:48:00', 'Consulta inicial.', 'Positivo PCR. Asintomático.', 'Si', '24651384L');
