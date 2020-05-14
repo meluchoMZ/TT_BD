@@ -42,31 +42,31 @@ INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 
 /* En "Pacientes" */
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro) 
-	VALUES ('11111111A', 'Alicia', 'Álvarez Ávila', 'Muller', to_date('01-01-1991 00:00:00', 'dd-mm-yyyy hh:mi:ss'), 'R/ Alexandre Bóveda Nº 1, A Coruña', to_date('30-04-2020 00:00:00', 'dd-mm-yyyy hh:mi:ss'));
+	VALUES ('11111111A', 'Alicia', 'Álvarez Ávila', 'Muller', to_date('01-01-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Bóveda Nº 1, A Coruña', to_date('30-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('22222222B', 'Bernardo', 'Bósforo Bieito', 'Home', to_date('02-02-1992 00:00:00', 'dd-mm-yyyy hh:mi:ss'), 'R/ Francis Bacon Nº 2, A Coruña', to_date('22-04-2020 00:00:00', 'dd-mm-yyyy hh:mi:ss'));
+	VALUES ('22222222B', 'Bernardo', 'Bósforo Bieito', 'Home', to_date('02-02-1992 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Francis Bacon Nº 2, A Coruña', to_date('22-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', to_date('03-03-1993 00:00:00', 'dd-mm-yyyy hh:mi:ss'), 'R/ Marie Curie Nº 2, Santiago de Compostela', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh:mi:ss'));
+	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', to_date('03-03-1993 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Marie Curie Nº 2, Santiago de Compostela', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'));
 
 /* En "Sanitarios" */
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('12345678T', 'Margarita', 'Robles Conde', 'Muller', '13/05/1975', 'R/ Alexandre Bóveda Nº 9, A Coruña', 'Enfermaría');
+	VALUES ('12345678T', 'Margarita', 'Robles Conde', 'Muller', to_date('13-05-1975 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Bóveda Nº 9, A Coruña', 'Enfermaría');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('98765432Z', 'José Luís', 'López Barreiro', 'Home', '06/11/1962', 'R/ Rosalía de Castro Nº 3, Santiago de Compostela', 'Paramedicina');
+	VALUES ('98765432Z', 'José Luís', 'López Barreiro', 'Home', to_date('06-11-1962 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Rosalía de Castro Nº 3, Santiago de Compostela', 'Paramedicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('46356167D', 'María', 'Tuñas Dobarro', 'Muller', '22/01/1984', 'R/ Malcolm Gladwell Nº 2, Santiago de Compostela', 'Medicina');
+	VALUES ('46356167D', 'María', 'Tuñas Dobarro', 'Muller', to_date('22-01-1984 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Malcolm Gladwell Nº 2, Santiago de Compostela', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('98465167F', 'Faustino', 'López Cadea', 'Home', '31/08/1959', 'R/ Pío Baroja Nº 1, Santiago de Compostela', 'Medicina');
+	VALUES ('98465167F', 'Faustino', 'López Cadea', 'Home', to_date('31-08-1959 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Pío Baroja Nº 1, Santiago de Compostela', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('79865132V', 'Herminio', 'Lamas Freire', 'Home', '06/11/1956', 'R/ Padre Sarmiento Nº 46, A Coruña', 'Medicina');
+	VALUES ('79865132V', 'Herminio', 'Lamas Freire', 'Home', to_date('06-11-1956 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Padre Sarmiento Nº 46, A Coruña', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('61681664T', 'Ana María', 'Sánchez Freije', 'Muller', '19/09/1968', 'R/ Leonardo da Vinci, A Coruña', 'Medicina');
+	VALUES ('61681664T', 'Ana María', 'Sánchez Freije', 'Muller', to_date('19-09-1968 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Leonardo da Vinci, A Coruña', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('51681686P', 'Laura', 'Fernández Vara', 'Muller', '07/03/1985', 'R/ Manuel Azaña, A Coruña', 'Paramedicina');
+	VALUES ('51681686P', 'Laura', 'Fernández Vara', 'Muller', to_date('07-03-1985 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Manuel Azaña, A Coruña', 'Paramedicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('16843534R', 'Carlos', 'Pérez Caamaño', 'Home', '15/08/1991', 'R/ Carl Freidich Gauss, Santiago de Compostela', 'Enfermaría');
+	VALUES ('16843534R', 'Carlos', 'Pérez Caamaño', 'Home', to_date('15-08-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Carl Freidich Gauss, Santiago de Compostela', 'Enfermaría');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('24651384L', 'Antonia', 'González García', 'Muller', '09/04/1989', 'R/ Che Guevara, A Coruña', 'Medicina');
+	VALUES ('24651384L', 'Antonia', 'González García', 'Muller', to_date('09-04-1989 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Che Guevara, A Coruña', 'Medicina');
 
 /* En "Teléfonos pacientes" */
 INSERT INTO telefonos_pacientes (dni_paciente, tlf)

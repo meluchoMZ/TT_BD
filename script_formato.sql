@@ -9,7 +9,7 @@ set feed 1;
 set linesize 250;
 
 /* Para controlar os formatos das datas e horas */
-ALTER SESSION SET nls_date_format='dd-Mon-yyyy hh:mi:ss';
+ALTER SESSION SET nls_date_format='dd-Mon-yyyy hh24:mi:ss';
 
 /* Táboa Centros sanitarios */
 /* O formato de enderezo está definido na táboa Táboa pacientes */
