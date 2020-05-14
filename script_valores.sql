@@ -88,7 +88,7 @@ INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
 	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh:mi:ss'), 'Consulta inicial.', 'O paciente presenta a sintomaloxía xeral.', 'Si', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('12-05-2020 10:25:00', 'dd-mm-yyyy hh:mi:ss'), 'Primeira revisión do paciente.', 'Non', '79856132V');
+	VALUES ('11111111A', to_date('12-05-2020 10:25:00', 'dd-mm-yyyy hh:mi:ss'), 'Primeira revisión do paciente.', 'Non', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
 	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh:mi:ss'), 'Primeira revisión do paciente.', 'Non', '61681664T');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
