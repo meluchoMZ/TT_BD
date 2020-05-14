@@ -42,11 +42,11 @@ INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 
 /* En "Pacientes" */
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro) 
-	VALUES ('11111111A', 'Alicia', 'Álvarez Ávila', 'Muller', '01/01/1991', 'R/ Alexandre Bóveda Nº 1, A Coruña', '30/04/2020');
+	VALUES ('11111111A', 'Alicia', 'Álvarez Ávila', 'Muller', to_date('01-01-1991 00:00:00', 'dd-mm-yyyy hh:mi:ss'), 'R/ Alexandre Bóveda Nº 1, A Coruña', to_date('30-04-2020 00:00:00', 'dd-mm-yyyy hh:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('22222222B', 'Bernardo', 'Bósforo Bieito', 'Home', '02/02/1992', 'R/ Francis Bacon Nº 2, A Coruña', '22/04/2020');
+	VALUES ('22222222B', 'Bernardo', 'Bósforo Bieito', 'Home', to_date('02-02-1992 00:00:00', 'dd-mm-yyyy hh:mi:ss'), 'R/ Francis Bacon Nº 2, A Coruña', to_date('22-04-2020 00:00:00', 'dd-mm-yyyy hh:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', '03/03/1993', 'R/ Marie Curie Nº 2, Santiago de Compostela', '29/04/2020');
+	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', to_date('03-03-1993 00:00:00', 'dd-mm-yyyy hh:mi:ss'), 'R/ Marie Curie Nº 2, Santiago de Compostela', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh:mi:ss'));
 
 /* En "Sanitarios" */
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
