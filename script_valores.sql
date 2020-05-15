@@ -119,3 +119,15 @@ INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitari
 	VALUES ('11111111A', to_date('01-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'A tomar ata que remitan os sintomas.', '79865132V');
 INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
 	VALUES ('22222222B', to_date('23-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Só tomar se aparecen sintomas. Nese caso, chamar inmediatamente.', '24651384L');
+
+/* En "Medicamentos" */
+INSERT INTO medicamentos (id_medicamento, posoloxia)
+	VALUES (68435168, 'Tres tomas ao dia, 5 mililitros por toma.');
+INSERT INTO medicamentos (id_medicamento, posoloxia)
+	VALUES (68135884, 'Unha unica toma ao dia, 600 miligramos');
+
+/* En "Medicamentos e tratamentos" */
+INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini, id_medicamento, dosificacion)
+	VALUES ('11111111A', to_date('01-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 68435168, 'Tres tomas de 5 mililitros ao dia.');
+INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini, id_medicamento, dosificacion)
+	VALUES ('22222222B', to_date('23-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 68135884, 'Tomar segundo posoloxia, so se hai sintomas.');

@@ -39,3 +39,9 @@ DROP TABLE revisions_exploracions CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da taboa "Tratamentos" */
 DROP TABLE tratamentos CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Medicamentos" */
+DROP TABLE medicamentos CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Medicamentos e tratamentos" */
+DROP TABLE medicamentos_tratamentos CASCADE CONSTRAINTS PURGE;

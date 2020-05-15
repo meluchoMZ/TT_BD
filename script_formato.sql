@@ -75,9 +75,19 @@ COLUMN data_hora_ini HEADING 'DATA/HORA INICIO';
 COLUMN id_exploracion HEADING 'EXPLORACION';
 COLUMN resultado HEADING 'RESULTADO' FORMAT A50;
 
-/* Taboa Tratamento */
+/* Taboa Tratamentos */
 COLUMN dni_paciente HEADING 'PACIENTE' FORMAT A9;
 COLUMN data_hora_ini HEADING 'DATA/HORA INICIO';
 COLUMN data_hora_fin HEADING 'DATA/HORA FIN';
 COLUMN observacions HEADING 'OBSERVACIONS';
 COLUMN dni_sanitario HEADING 'SANITARIO' FORMAT A9;
+
+/* Taboa Medicamentos */
+COLUMN id_medicamento HEADING 'MEDICAMENTO';
+COLUMN posoloxia HEADING 'POSOLOXIA' FORMAT A50;
+
+/* Taboa Medicamentos e tratamentos */
+COLUMN dni_paciente HEADING 'PACIENTE' FORMAT A9;
+COLUMN data_hora_ini HEADING 'DATA/HORA INICIO';
+COLUMN id_medicamento HEADING 'MEDICAMENTO';
+COLUMN dosificacion HEADING 'DOSIFICACION' FORMAT A100;

@@ -114,3 +114,19 @@ CREATE TABLE tratamentos (
 	dni_sanitario VARCHAR(9) REFERENCES sanitarios,
 	PRIMARY KEY (dni_paciente, data_hora_ini)
 );
+
+/* Creacion da taboa "Medicamentos" */
+CREATE TABLE medicamentos (
+	id_medicamento NUMBER(8) CONSTRAINT NN_medicamentos_id_med NOT NULL CONSTRAINT PK_medicamentos PRIMARY KEY,
+	posoloxia VARCHAR(256) CONSTRAINT NN_medicamentos_posoloxia NOT NULL
+);
+
+/* Creacion da taboa "Medicamentos dos tratamentos" */
+CREATE TABLE medicamentos_tratamentos (
+	dni_paciente VARCHAR(9) CONSTRAINT NN_med_trat_dni_paciente NOT NULL,
+	data_hora_ini DATE CONSTRAINT NN_med_trat_data_hora_ini NOT NULL,
+	id_medicamento CONSTRAINT NN_med_trat_id_med NOT NULL REFERENCES medicamentos,
+	dosificacion VARCHAR(512),
+	PRIMARY KEY (dni_paciente, data_hora_ini, id_medicamento),
+	FOREIGN KEY (dni_paciente, data_hora_ini) REFERENCES tratamentos
+);
