@@ -102,5 +102,5 @@ CREATE TABLE revisions_exploracions (
 	id_exploracion NUMBER(6) CONSTRAINT NN_rev_exp_id_exploracion NOT NULL REFERENCES exploracions,
 	resultado VARCHAR(1024), 
 	PRIMARY KEY (dni_paciente, data_hora_ini, id_exploracion),
-	REFERENCES historico_estados (dni_paciente, data_hora_ini)
+	FOREIGN KEY (dni_paciente, data_hora_ini) REFERENCES revisions_exploracions
 );
