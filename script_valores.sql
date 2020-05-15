@@ -101,3 +101,15 @@ INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions
 	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo asintom√°tico confinado na casa.');
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
 	VALUES ('33333333C', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'), 'ENFERMO', 'Enfermo grave. Ingresado en UCI.', 35);
+
+/* En "Exploracions" */
+INSERT INTO exploracions (id_exploracion, nome, descricion) 
+	VALUES (1, 'Toma de temperatura', 'Procedese a medir a temperatura do paciente.');
+INSERT INTO exploracions (id_exploracion, nome, descricion) 
+	VALUES (2, 'Proba de anticorpos PCR', 'Consiste en realizar un test de seroprevalencia do virus COVID-19 no paciente.');
+
+/* En "Revisi√≥ns e exploraci√≥ns" */
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado) 
+	VALUES ('11111111A', to_date('30-04-2020 11:30:00', 'dd-mm-yyyy dd24:mi:ss'), 1, '37.5 ∫C');
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy dd24:mi:ss'), 1, '36.0 ∫C');

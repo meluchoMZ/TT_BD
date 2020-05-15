@@ -86,3 +86,20 @@ CREATE TABLE historico_estados (
 	observacions VARCHAR(1024),
 	id_centro NUMERIC(3) 
 );
+
+/* Creación da táboa "Exploracións" */
+CREATE TABLE exploracions (
+	id_exploracion NUMBER(6) CONSTRAINT NN_exploracions_id_exploracion NOT NULL CONSTRAINT PK_exploracions PRIMARY KEY,
+	nome VARCHAR(50) CONSTRAINT NN_exploracions_nome NOT NULL,
+	descricion VARCHAR(1024)
+);
+
+/* Creación da táboa "Revisións e exploracións" */
+CREATE TABLE revisions_exploracions (
+	dni_paciente VARCHAR(9) CONSTRAINT NN_rev_exp_dni_paciente NOT NULL,
+	data_hora_ini DATE CONSTRAINT NN_rev_exp_data_hora_ini NOT NULL,
+	id_exploracion NUMBER(6) CONSTRAINT NN_rev_exp_id_exploracion NOT NULL,
+	resultado VARCHAR(1024), 
+	PRIMARY KEY (dni_paciente, data_hora_ini, id_exploracion),
+	REFERENCES (dni_paciente, data_hora_ini) historico_estados
+);
