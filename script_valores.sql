@@ -98,4 +98,6 @@ INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, d
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
 	VALUES ('11111111A', to_date('30-04-2020 11:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo leve.', 1);
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions)
-	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo asintomático confinado na casa');
+	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo asintomático confinado na casa.');
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
+	VALUES ('33333333C', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'), 'ENFERMO', 'Enfermo grave. Ingresado en UCI.', 35);

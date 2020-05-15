@@ -84,5 +84,5 @@ CREATE TABLE historico_estados (
 	data_hora_fin DATE,
 	estado VARCHAR(7) CONSTRAINT NN_hist_est_estado NOT NULL CHECK ((estado = 'CURADO') OR (estado = 'ENFERMO')),
 	observacions VARCHAR(1024),
-	id_centro NUMERIC(3) CONSTRAINT NN_hist_est_id_centro NOT NULL REFERENCES centros_sanitarios
+	id_centro NUMERIC(3) 
 );
