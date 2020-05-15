@@ -131,3 +131,13 @@ INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini, id_medicament
 	VALUES ('11111111A', to_date('01-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 68435168, 'Tres tomas de 5 mililitros ao dia.');
 INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini, id_medicamento, dosificacion)
 	VALUES ('22222222B', to_date('23-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 68135884, 'Tomar segundo posoloxia, so se hai sintomas.');
+
+/* En "Equipos" */
+INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
+	VALUES (1, 1, -1, "Urxencias 1.");
+INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
+	VALUES (1, 2, -1, "Urxencias 2.");
+INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
+	VALUES (1, 3, -1, "Triaxe 1");
+INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
+	VALUES (1, 4, -1, "Triaxe 2");

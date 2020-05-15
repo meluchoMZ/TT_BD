@@ -130,3 +130,53 @@ CREATE TABLE medicamentos_tratamentos (
 	PRIMARY KEY (dni_paciente, data_hora_ini, id_medicamento),
 	FOREIGN KEY (dni_paciente, data_hora_ini) REFERENCES tratamentos
 );
+
+/* Creacion da taboa "Equipos" */
+CREATE TABLE equipos (
+	id_centro NUMERIC(3) CONSTRAINT NN_equipos_id_centro NOT NULL  REFERENCES centros_sanitarios,
+	num_equipo NUMERIC(3) CONSTRAINT NN_equipos_num_equipo NOT NULL,
+	planta NUMERIC(1) CONSTRAINT NN_equipos_planta NOT NULL,,
+	cometido VARCHAR(1024) CONSTRAINT NN_equipos_cometido NOT NULL,
+	PRIMARY KEY (id_centro, num_equipo)
+);
+
+/* Creacion da taboa "Historico equipos" */
+CREATE TABLE historico_equipos (
+	id_centro NUMERIC(3) CONSTRAINT NN_hist_equ_id_cent NOT NULL,
+	num_equipo NUMERIC(3) CONSTRAINT NN_hist_equ_n_equ NOT NULL,
+	data_hora_ini DATE CONSTRAINT NN_hist_equ_d_h_ini NOT NULL,
+	data_hora_fin DATE,
+	PRIMARY KEY (id_centro, num_equipo, data_hora_ini),
+	FOREIGN KEY (id_centro, num_equipo) REFERENCES equipos
+);
+
+/* Creacion da taboa "Quendas" */
+CREATE TABLE quendas (
+	id_centro NUMERIC(3) CONSTRAINT NN_quendas_id_centro NOT NULL REFERENCES centros_sanitarios,
+	dia_hora_ini DATE CONSTRAINT NN_quendas_dia_hora_ini NOT NULL,
+	dia_hora_fin DATE,
+	incidencias VARCHAR(1024),
+	PRIMARY KEY (id_centro, dia_hora_ini)
+);
+
+/* Creacion da taboa "Equipos e quendas" */
+CREATE TABLE equipos_quendas (
+	id_centro NUMERIC(3) CONSTRAINT NN_eq_quen_id_centro NOT NULL,
+	num_equipo NUMERIC(3) CONSTRAINT NN_eq_quen_num_equipo NOT NULL,
+	data_hora_equipo DATE CONSTRAINT NN_eq_qu_d_h_equ NOT NULL,
+	data_hora_quenda DATE CONSTRAINT NN_eq_qu_d_h_que NOT NULL,
+	PRIMARY KEY (id_centro, num_equipo, data_hora_equipo, data_hora_quenda),
+	FOREIGN KEY (id_centro, num_equipo, data_hora_equipo) REFERENCES historico_equipos,
+	FOREIGN KEY (id_centro, data_hora_quenda) REFERENCES quendas
+);
+
+/* Creacion da taboa "Sanitarios e Historicos de equipos" */
+CREATE TABLE sanitarios_historico (
+	dni_sanitario VARCHAR(9) CONSTRAINT NN_san_his_dni NOT NULL REFERENCES sanitarios,
+	id_centro NUMERIC(3) CONSTRAINT NN_san_his_centro NOT NULL,
+	num_equipo NUMERIC(3) CONSTRAINT NN_san_his_num_equ NOT NULL,
+	data_hora_ini DATE CONSTRAINT NN_san_his_d_h_ini NOT NULL,
+	PRIMARY KEY (dni_sanitario, id_centro, num_equipo, data_hora_ini),
+	FOREIGN KEY (id_centro, num_equipo, data_hora_ini) REFERENCES historico_equipos
+);
+

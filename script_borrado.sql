@@ -45,3 +45,18 @@ DROP TABLE medicamentos CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da taboa "Medicamentos e tratamentos" */
 DROP TABLE medicamentos_tratamentos CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Equipos" */
+DROP TABLE equipos CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Historicos equipos" */
+DROP TABLE historico_equipos CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Quendas" */
+DROP TABLE quendas CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Equipos e quendas" */
+DROP TABLE equipos_quendas CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Sanitarios e Historicos de equipos" */
+DROP TABLE sanitarios_historico CASCADE CONSTRAINTS PURGE;
