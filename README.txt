@@ -1,6 +1,6 @@
 /* README
-	Opción 1 : Xestión de pandemias
-	Autor: Miguel Blanco Godón 78809752E 
+	Opcion 1 : Xestion de pandemias
+	Autor: Miguel Blanco Godon 78809752E 
 	Grupo 2.4
 */
 

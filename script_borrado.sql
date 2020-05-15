@@ -1,38 +1,41 @@
 /* Script de borrado da base de datos do traballo tutelado BD(2019-2020)
-	Opción 1 : Xestión de pandemias
-	Autor: Miguel Blanco Godón 78809752E 
+	Opcion 1 : Xestion de pandemias
+	Autor: Miguel Blanco Godon 78809752E 
 	Grupo 2.4
 */
 
-/* Borrado da táboa "Centros sanitarios" */
+/* Borrado da taboa "Centros sanitarios" */
 DROP TABLE centros_sanitarios CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Centros sanitarios - Tipo de material" */
+/* Borrado da taboa "Centros sanitarios - Tipo de material" */
 DROP TABLE centro_tipo CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Pacientes" */
+/* Borrado da taboa "Pacientes" */
 DROP TABLE pacientes CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Sanitarios" */
+/* Borrado da taboa "Sanitarios" */
 DROP TABLE sanitarios CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Teléfonos_pacientes" */
+/* Borrado da taboa "Telefonos_pacientes" */
 DROP TABLE telefonos_pacientes CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Teléfonos_sanitarios" */
+/* Borrado da taboa "Telefonos_sanitarios" */
 DROP TABLE telefonos_sanitarios CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Tipo de material" */
+/* Borrado da taboa "Tipo de material" */
 DROP TABLE tipo_material CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Revisións" */
+/* Borrado da taboa "Revisions" */
 DROP TABLE revisions CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da táboa "Histórico pacientes" */
+/* Borrado da taboa "Historico pacientes" */
 DROP TABLE historico_estados CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da t�boa "Exploraci�ns" */
+/* Borrado da taboa "Exploracions" */
 DROP TABLE exploracions CASCADE CONSTRAINTS PURGE;
 
-/* Borrado da t�boa "Revisi�ns e exploraci�ns" */
+/* Borrado da taboa "Revisions e exploracions" */
 DROP TABLE revisions_exploracions CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Tratamentos" */
+DROP TABLE tratamentos CASCADE CONSTRAINTS PURGE;

@@ -1,16 +1,16 @@
 /* Script para encher da base de datos do traballo tutelado BD(2019-2020)
-	Opción 1 : Xestión de pandemias
-	Autor: Miguel Blanco Godón 78809752E 
+	Opcion 1 : Xestion de pandemias
+	Autor: Miguel Blanco Godon 78809752E 
 	Grupo 2.4
 */
 
-/* INSERCIÓN DE VALORES NAS TÁBOAS */
+/* INSERCION DE VALORES NAS TABOAS */
 
 /* En "Centros sanitarios" */
 INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo)
-	VALUES (1, 'Hospital Clínico Universitario', 'Santiago de Compostela');
+	VALUES (1, 'Hospital Clinico Universitario', 'Santiago de Compostela');
 INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo)
-	VALUES (35, 'Complexo Hospitalario Universitario', 'A Coruña');
+	VALUES (35, 'Complexo Hospitalario Universitario', 'A Corunha');
 
 /* En "Tipo material" */
 INSERT INTO tipo_material (tipo, info) 
@@ -42,33 +42,33 @@ INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 
 /* En "Pacientes" */
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro) 
-	VALUES ('11111111A', 'Alicia', 'Álvarez Ávila', 'Muller', to_date('01-01-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Bóveda Nº 1, A Coruña', to_date('30-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
+	VALUES ('11111111A', 'Alicia', 'Alvarez Avila', 'Muller', to_date('01-01-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Boveda N 1, A Corunha', to_date('30-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('22222222B', 'Bernardo', 'Bósforo Bieito', 'Home', to_date('02-02-1992 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Francis Bacon Nº 2, A Coruña', to_date('22-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
+	VALUES ('22222222B', 'Bernardo', 'Bosforo Bieito', 'Home', to_date('02-02-1992 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Francis Bacon N 2, A Corunha', to_date('22-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', to_date('03-03-1993 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Marie Curie Nº 2, Santiago de Compostela', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'));
+	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', to_date('03-03-1993 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Marie Curie N 2, Santiago de Compostela', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'));
 
 /* En "Sanitarios" */
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('12345678T', 'Margarita', 'Robles Conde', 'Muller', to_date('13-05-1975 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Bóveda Nº 9, A Coruña', 'Enfermaría');
+	VALUES ('12345678T', 'Margarita', 'Robles Conde', 'Muller', to_date('13-05-1975 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Boveda N 9, A Corunha', 'Enfermaria');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('98765432Z', 'José Luís', 'López Barreiro', 'Home', to_date('06-11-1962 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Rosalía de Castro Nº 3, Santiago de Compostela', 'Paramedicina');
+	VALUES ('98765432Z', 'Jose Luis', 'Lopez Barreiro', 'Home', to_date('06-11-1962 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Rosalia de Castro N 3, Santiago de Compostela', 'Paramedicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('46356167D', 'María', 'Tuñas Dobarro', 'Muller', to_date('22-01-1984 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Malcolm Gladwell Nº 2, Santiago de Compostela', 'Medicina');
+	VALUES ('46356167D', 'Maria', 'Tunhas Dobarro', 'Muller', to_date('22-01-1984 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Malcolm Gladwell N 2, Santiago de Compostela', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('98465167F', 'Faustino', 'López Cadea', 'Home', to_date('31-08-1959 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Pío Baroja Nº 1, Santiago de Compostela', 'Medicina');
+	VALUES ('98465167F', 'Faustino', 'Lopez Cadea', 'Home', to_date('31-08-1959 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Pio Baroja N 1, Santiago de Compostela', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('79865132V', 'Herminio', 'Lamas Freire', 'Home', to_date('06-11-1956 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Padre Sarmiento Nº 46, A Coruña', 'Medicina');
+	VALUES ('79865132V', 'Herminio', 'Lamas Freire', 'Home', to_date('06-11-1956 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Padre Sarmiento N 46, A Corunha', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('61681664T', 'Ana María', 'Sánchez Freije', 'Muller', to_date('19-09-1968 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Leonardo da Vinci, A Coruña', 'Medicina');
+	VALUES ('61681664T', 'Ana Maria', 'Sanchez Freije', 'Muller', to_date('19-09-1968 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Leonardo da Vinci, A Corunha', 'Medicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('51681686P', 'Laura', 'Fernández Vara', 'Muller', to_date('07-03-1985 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Manuel Azaña, A Coruña', 'Paramedicina');
+	VALUES ('51681686P', 'Laura', 'Fernandez Vara', 'Muller', to_date('07-03-1985 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Manuel Azanha, A Corunha', 'Paramedicina');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('16843534R', 'Carlos', 'Pérez Caamaño', 'Home', to_date('15-08-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Carl Freidich Gauss, Santiago de Compostela', 'Enfermaría');
+	VALUES ('16843534R', 'Carlos', 'Perez Caamanho', 'Home', to_date('15-08-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Carl Freidich Gauss, Santiago de Compostela', 'Enfermaria');
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
-	VALUES ('24651384L', 'Antonia', 'González García', 'Muller', to_date('09-04-1989 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Che Guevara, A Coruña', 'Medicina');
+	VALUES ('24651384L', 'Antonia', 'Gonzalez Garcia', 'Muller', to_date('09-04-1989 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Che Guevara, A Corunha', 'Medicina');
 
-/* En "Teléfonos pacientes" */
+/* En "Telefonos pacientes" */
 INSERT INTO telefonos_pacientes (dni_paciente, tlf)
 	VALUES ('11111111A', '611222333');
 INSERT INTO telefonos_pacientes (dni_paciente, tlf)
@@ -76,7 +76,7 @@ INSERT INTO telefonos_pacientes (dni_paciente, tlf)
 INSERT INTO telefonos_pacientes (dni_paciente, tlf)
 	VALUES ('33333333C', '688999777');
 
-/* En "Teléfonos sanitarios" */
+/* En "Telefonos sanitarios" */
 INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 	VALUES ('12345678T', '620940954');
 INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
@@ -84,21 +84,21 @@ INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 	VALUES ('98765432Z', '684513518');
 
-/* En "Revisións" */
+/* En "Revisions" */
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'O paciente presenta a sintomaloxía xeral.', 'Si', '79865132V');
+	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'O paciente presenta a sintomaloxia xeral.', 'Si', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('12-05-2020 10:25:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revisión do paciente.', 'Non', '79865132V');
+	VALUES ('11111111A', to_date('12-05-2020 10:25:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision do paciente.', 'Non', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revisión do paciente.', 'Non', '61681664T');
+	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision do paciente.', 'Non', '61681664T');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
-	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomático.', 'Si', '24651384L');
+	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomatico.', 'Si', '24651384L');
 
-/* En "Histórico estados" */
+/* En "Historico estados" */
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
 	VALUES ('11111111A', to_date('30-04-2020 11:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo leve.', 1);
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions)
-	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo asintomático confinado na casa.');
+	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo asintomatico confinado na casa.');
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
 	VALUES ('33333333C', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'), 'ENFERMO', 'Enfermo grave. Ingresado en UCI.', 35);
 
@@ -108,8 +108,14 @@ INSERT INTO exploracions (id_exploracion, nome, descricion)
 INSERT INTO exploracions (id_exploracion, nome, descricion) 
 	VALUES (2, 'Proba de anticorpos PCR', 'Consiste en realizar un test de seroprevalencia do virus COVID-19 no paciente.');
 
-/* En "Revisións e exploracións" */
+/* En "Revisions e exploracions" */
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado) 
-	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '37.5 �C');
+	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '37.5 C');
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
-	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '36.0 �C');
+	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '36.0 C');
+
+/* En "Tratamentos" */
+INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
+	VALUES ('11111111A', to_date('01-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'A tomar ata que remitan os sintomas.', '79865132V');
+INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
+	VALUES ('22222222B', to_date('23-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'S� tomar se aparecen sintomas. Nese caso, chamar inmediatamente.', '24651384L');

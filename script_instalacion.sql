@@ -1,26 +1,26 @@
-/* Script de creación de táboas da base de datos do traballo tutelado BD(2019-2020)
-	Opción 1 : Xestión de pandemias
-	Autor: Miguel Blanco Godón 78809752E 
+/* Script de creacion de taboas da base de datos do traballo tutelado BD(2019-2020)
+	Opcion 1 : Xestion de pandemias
+	Autor: Miguel Blanco Godon 78809752E 
 	Grupo 2.4
 */
 
-/* CREACIÓN DE TÁBOAS */ 
+/* CREACION DE TABOAS */ 
 
-/* Creación da táboa "Centros sanitarios" */
+/* Creacion da taboa "Centros sanitarios" */
 CREATE TABLE centros_sanitarios (
 	id_centro NUMERIC(3) CONSTRAINT PK_centros_sanitarios PRIMARY KEY CONSTRAINT NN_c_s_id_centro NOT NULL,
 	nome_centro VARCHAR(100) CONSTRAINT NN_c_s_nome_centro NOT NULL,
 	enderezo VARCHAR(512) CONSTRAINT NN_c_s_enderezo NOT NULL
 );
 
-/* Creación da táboa "Tipo material" */
+/* Creacion da taboa "Tipo material" */
 CREATE TABLE tipo_material (
 	tipo VARCHAR(12) CONSTRAINT PK_tipo_material PRIMARY KEY CONSTRAINT NN_tipo_material_tipo NOT NULL 
 		CHECK ((tipo = 'Mascarillas') OR (tipo = 'Luvas') OR (tipo = 'Lentes') OR (tipo = 'Batas')),
 	info VARCHAR(1024) CONSTRAINT NN_tipo_material_info NOT NULL
 );
 
-/* Creación da táboa "Centro sanitario - tipo material" */
+/* Creacion da taboa "Centro sanitario - tipo material" */
 CREATE TABLE centro_tipo (
 	id_centro NUMERIC(3) CONSTRAINT NN_centro_tipo_id_centro NOT NULL REFERENCES centros_sanitarios,
 	tipo_mat VARCHAR(15) CONSTRAINT NN_centro_tipo_tipo_material NOT NULL REFERENCES tipo_material,
@@ -30,7 +30,7 @@ CREATE TABLE centro_tipo (
 	CHECK (stock_actual >= stock_minimo)
 );
 
-/* Creación da táboa "Pacientes" */
+/* Creacion da taboa "Pacientes" */
 CREATE TABLE pacientes (
 	dni VARCHAR(9) CONSTRAINT PK_pacientes PRIMARY KEY CONSTRAINT NN_pacientes_dni NOT NULL,
 	nome VARCHAR(256) CONSTRAINT NN_pacientes_nome NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE pacientes (
 	data_rexistro DATE CONSTRAINT NN_pacientes_data_rexistro NOT NULL
 );
 
-/* Creación da táboa Sanitarios */
+/* Creacion da taboa Sanitarios */
 CREATE TABLE sanitarios (
 	dni VARCHAR(9) CONSTRAINT PK_sanitarios PRIMARY KEY CONSTRAINT NN_sanitarios_dni NOT NULL,
 	nome VARCHAR(256) CONSTRAINT NN_sanitarios_nome NOT NULL,
@@ -49,24 +49,24 @@ CREATE TABLE sanitarios (
 	sexo VARCHAR(6) CONSTRAINT NN_sanitarios_sexo NOT NULL CHECK ((sexo = 'Home') OR (sexo = 'Muller')),
 	data_nacemento DATE CONSTRAINT NN_sanitarios_data_nacemento NOT NULL,
 	enderezo VARCHAR(512) CONSTRAINT NN_sanitarios_enderezo NOT NULL,
-	categoria VARCHAR(12) CONSTRAINT NN_sanitarios_categoria NOT NULL CHECK ((categoria = 'Medicina') OR (categoria = 'Enfermaría') OR (categoria = 'Paramedicina'))
+	categoria VARCHAR(12) CONSTRAINT NN_sanitarios_categoria NOT NULL CHECK ((categoria = 'Medicina') OR (categoria = 'Enfermaria') OR (categoria = 'Paramedicina'))
 );
 
-/* Creación da táboa "Teléfonos_pacientes" */
+/* Creacion da taboa "Telefonos_pacientes" */
 CREATE TABLE telefonos_pacientes (
 	dni_paciente VARCHAR(9) REFERENCES pacientes CONSTRAINT NN_telefonos_pacientes_dni NOT NULL,
 	tlf VARCHAR(9) CONSTRAINT NN_telefonos_pacientes_tlf NOT NULL,
 	PRIMARY KEY (dni_paciente, tlf)
 );
 
-/* Creación da táboa "Teléfonos_sanitarios" */
+/* Creacion da taboa "Telefonos_sanitarios" */
 CREATE TABLE telefonos_sanitarios (
 	dni_sanitario VARCHAR(9) REFERENCES sanitarios CONSTRAINT NN_telefonos_sanitarios_dni NOT NULL,
 	tlf VARCHAR(9) CONSTRAINT NN_telefonos_sanitarios_tlf NOT NULL,
 	PRIMARY KEY (dni_sanitario, tlf)
 );
 
-/* Creación da táboa "Revisións" */
+/* Creacion da taboa "Revisions" */
 CREATE TABLE revisions (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_revisions_dni_paciente NOT NULL REFERENCES pacientes,
 	data_hora DATE CONSTRAINT NN_revisions_data_hora NOT NULL,
@@ -77,25 +77,25 @@ CREATE TABLE revisions (
 	PRIMARY KEY (dni_paciente, data_hora) 
 );
 
-/* Creación da táboa "Histórico pacientes" */
+/* Creacion da taboa "Historico pacientes" */
 CREATE TABLE historico_estados (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_hist_est_dni_paciente NOT NULL REFERENCES pacientes, 
 	data_hora_ini DATE CONSTRAINT NN_hist_est_data_hora_ini NOT NULL,
 	data_hora_fin DATE,
-	estado VARCHAR(7) CONSTRAINT NN_hist_est_estado NOT NULL CHECK ((estado = 'CURADO') OR (estado = 'ENFERMO')),
+	estado VARCHAR(7) CONSTRAINT NN_hist_est_estado NOT NULL CHECK ((estado = 'Curado') OR (estado = 'Enfermo')),
 	observacions VARCHAR(1024),
 	id_centro NUMERIC(3),
        	PRIMARY KEY (dni_paciente, data_hora_ini)	
 );
 
-/* Creación da táboa "Exploracións" */
+/* Creacion da taboa "Exploracions" */
 CREATE TABLE exploracions (
 	id_exploracion NUMBER(6) CONSTRAINT NN_exploracions_id_exploracion NOT NULL CONSTRAINT PK_exploracions PRIMARY KEY,
 	nome VARCHAR(50) CONSTRAINT NN_exploracions_nome NOT NULL,
 	descricion VARCHAR(1024)
 );
 
-/* Creación da táboa "Revisións e exploracións" */
+/* Creacion da taboa "Revisions e exploracions" */
 CREATE TABLE revisions_exploracions (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_rev_exp_dni_paciente NOT NULL,
 	data_hora_ini DATE CONSTRAINT NN_rev_exp_data_hora_ini NOT NULL,
@@ -103,4 +103,14 @@ CREATE TABLE revisions_exploracions (
 	resultado VARCHAR(1024), 
 	PRIMARY KEY (dni_paciente, data_hora_ini, id_exploracion),
 	FOREIGN KEY (dni_paciente, data_hora_ini) REFERENCES revisions
+);
+
+/* Creacion da taboa "Tratamentos" */
+CREATE TABLE tratamentos (
+	dni_paciente VARCHAR(9) CONSTRAINT NN_tratamentos_dni_paciente NOT NULL REFERENCES pacientes,
+	data_hora_ini DATE CONSTRAINT NN_tratamentos_dni_paciente NOT NULL,
+	data_hora_fin DATE,
+	observacions VARCHAR(1024),
+	dni_sanitario VARCHAR(9) REFERENCES sanitarios,
+	PRIMARY KEY (dni_paciente, data_hora_ini)
 );
