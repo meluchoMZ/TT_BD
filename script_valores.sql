@@ -112,4 +112,4 @@ INSERT INTO exploracions (id_exploracion, nome, descricion)
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado) 
 	VALUES ('11111111A', to_date('30-04-2020 11:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '37.5 ºC');
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
-	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '36.0 ºC');
+	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '36.0 ºC');
