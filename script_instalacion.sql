@@ -80,8 +80,8 @@ CREATE TABLE revisions (
 /* Creación da táboa "Histórico pacientes" */
 CREATE TABLE historico_estados (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_hist_est_dni_paciente NOT NULL REFERENCES pacientes, 
-	data_hora_ini DATA CONSTRAINT NN_hist_est_data_hora_ini NOT NULL,
-	data_hora_fin DATA,
+	data_hora_ini DATE CONSTRAINT NN_hist_est_data_hora_ini NOT NULL,
+	data_hora_fin DATE,
 	estado VARCHAR(7) CONSTRAINT NN_hist_est_estado NOT NULL CHECK ((estado = 'CURADO') OR (estado = 'ENFERMO')),
 	observacions VARCHAR(1024),
 	id_centro NUMERIC(3) CONSTRAINT NN_hist_est_id_centro NOT NULL REFERENCES centros_sanitarios
