@@ -180,3 +180,15 @@ CREATE TABLE sanitarios_historico (
 	FOREIGN KEY (id_centro, num_equipo, data_hora_ini) REFERENCES historico_equipos
 );
 
+/* Creacion da taboa "Material" */
+CREATE TABLE material (
+	referencia NUMERIC(8) CONSTRAINT NN_material_referencia NOT NULL CONSTRAINT PK_material PRIMARY KEY,
+	nome VARCHAR(20) CONSTRAINT NN_material_nome NOT NULL,
+	id_centro NUMERIC(3),
+	data_hora_equipo DATE,
+	num_equipo NUMERIC(3),
+	data_hora_quenda DATE,
+	tipo_material VARCHAR(20) REFERENCES tipo_material,
+	FOREIGN KEY (id_centro, num_equipo, data_hora_equipo) REFERENCES historico_equipos,
+	FOREIGN KEY (id_centro, data_hora_quenda) REFERENCES quendas
+);
