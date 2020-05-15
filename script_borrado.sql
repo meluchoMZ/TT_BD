@@ -30,3 +30,9 @@ DROP TABLE revisions CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da tÃ¡boa "HistÃ³rico pacientes" */
 DROP TABLE historico_estados CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da táboa "Exploracións" */
+DROP TABLE exploracions CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da táboa "Revisións e exploracións" */
+DROP TABLE revisions_exploracions CASCADE CONSTRAINTS PURGE;
