@@ -60,3 +60,6 @@ DROP TABLE equipos_quendas CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da taboa "Sanitarios e Historicos de equipos" */
 DROP TABLE sanitarios_historico CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da taboa "Material" */
+DROP TABLE material CASCADE CONSTRAINTS PURGE;
