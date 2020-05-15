@@ -108,7 +108,7 @@ CREATE TABLE revisions_exploracions (
 /* Creacion da taboa "Tratamentos" */
 CREATE TABLE tratamentos (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_tratamentos_dni_paciente NOT NULL REFERENCES pacientes,
-	data_hora_ini DATE CONSTRAINT NN_tratamentos_dni_paciente NOT NULL,
+	data_hora_ini DATE CONSTRAINT NN_tratamentos_data_hora_ini NOT NULL,
 	data_hora_fin DATE,
 	observacions VARCHAR(1024),
 	dni_sanitario VARCHAR(9) REFERENCES sanitarios,
