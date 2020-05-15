@@ -27,3 +27,6 @@ DROP TABLE tipo_material CASCADE CONSTRAINTS PURGE;
 
 /* Borrado da táboa "Revisións" */
 DROP TABLE revisions CASCADE CONSTRAINTS PURGE;
+
+/* Borrado da táboa "Histórico pacientes" */
+DROP TABLE historico_pacientes CASCADE CONSTRAINTS PURGE;

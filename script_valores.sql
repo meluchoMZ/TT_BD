@@ -86,10 +86,16 @@ INSERT INTO telefonos_sanitarios (dni_sanitario, tlf)
 
 /* En "Revisións" */
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh:mi:ss'), 'Consulta inicial.', 'O paciente presenta a sintomaloxía xeral.', 'Si', '79865132V');
+	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'O paciente presenta a sintomaloxía xeral.', 'Si', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('12-05-2020 10:25:00', 'dd-mm-yyyy hh:mi:ss'), 'Primeira revisión do paciente.', 'Non', '79865132V');
+	VALUES ('11111111A', to_date('12-05-2020 10:25:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revisión do paciente.', 'Non', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh:mi:ss'), 'Primeira revisión do paciente.', 'Non', '61681664T');
+	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revisión do paciente.', 'Non', '61681664T');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
-	VALUES ('22222222B', to_date('22-04-2020 07:48:00', 'dd-mm-yyyy hh:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomático.', 'Si', '24651384L');
+	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomático.', 'Si', '24651384L');
+
+/* En "Histórico pacientes" */
+INSERT INTO historico_pacientes (dni_paciente, data_hora_ini, estado, observacions, id_centro)
+	VALUES ('11111111A', to_date('30-04-2020 11:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo leve.', 1);
+INSERT INTO historico_pacientes (dni_paciente, data_hora_ini, estado, observacions)
+	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 'ENFERMO', 'Enfermo asintomático confinado na casa');
