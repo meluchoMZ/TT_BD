@@ -110,6 +110,6 @@ INSERT INTO exploracions (id_exploracion, nome, descricion)
 
 /* En "Revisi√≥ns e exploraci√≥ns" */
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado) 
-	VALUES ('11111111A', to_date('30-04-2020 11:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '37.5 ∫C');
+	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '37.5 ∫C');
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
-	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '36.0 ∫C');
+	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '36.0 ∫C');
