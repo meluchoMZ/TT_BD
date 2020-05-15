@@ -118,7 +118,7 @@ INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion,
 INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
 	VALUES ('11111111A', to_date('01-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'A tomar ata que remitan os sintomas.', '79865132V');
 INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
-	VALUES ('22222222B', to_date('23-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Só tomar se aparecen sintomas. Nese caso, chamar inmediatamente.', '24651384L');
+	VALUES ('22222222B', to_date('23-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'So tomar se aparecen sintomas. Nese caso, chamar inmediatamente.', '24651384L');
 
 /* En "Medicamentos" */
 INSERT INTO medicamentos (id_medicamento, posoloxia)
