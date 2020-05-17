@@ -134,10 +134,10 @@ INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini, id_medicament
 
 /* En "Equipos" */
 INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
-	VALUES (1, 1, -1, 'Uxencias 1');
+	VALUES (1, 1, -1, 'Uxencias 1.');
 INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
 	VALUES (1, 2, -1, 'Urxencias 2.');
 INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
-	VALUES (1, 3, -1, 'Triaxe 1');
+	VALUES (1, 3, -1, 'Triaxe 1.');
 INSERT INTO equipos (id_centro, num_equipo, planta, cometido)
-	VALUES (1, 4, -1, 'Triaxe 2');
+	VALUES (1, 4, -1, 'Triaxe 2.');
