@@ -194,4 +194,4 @@ INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo,
 INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo, data_hora_quenda, tipo_material)
 	VALUES (35168513, 'S3505CEC', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 3, to_date('12-03-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Batas');
 INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo, data_hora_quenda, tipo_material)
-	VALUES (13513515, 'FS3545CEA', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 4, to_date('12-03-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'); 'Batas');
+	VALUES (13513515, 'FS3545CEA', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 4, to_date('12-03-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'),'Batas');
