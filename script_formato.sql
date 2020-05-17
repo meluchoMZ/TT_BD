@@ -121,3 +121,12 @@ COLUMN sanitarios_historico.dni_sanitario HEADING 'PUTO MEDICO';
 COLUMN sanitarios_historico.id_centro HEADING 'CENTRO HISTORICO';
 COLUMN sanitarios_historico.num_equipo HEADNIG ' EQUIPO HISTORICO';
 COLUMN sanitarios_historico.data_hora_ini HEADING 'DATA HISTORICO';
+
+/* Taboa Materiais */
+COLUMN material.referencia HEADING 'REFERENCIA';
+COLUMN material.nome HEADING 'MATERIAL';
+COLUMN material.id_centro HEADING 'CENTRO';
+COLUMN material.data_hora_equipo HEADING 'DATA/HORA DO EQUIPO';
+COLUMN material.num_equipo HEADING 'EQUIPO';
+COLUMN material.data_hora_quenda HEADING 'DATA/HORA DO QUENDA';
+COLUMN material.tipo_material HEADING 'TIPO DE MATERIAL';
