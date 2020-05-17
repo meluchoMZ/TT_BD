@@ -101,8 +101,8 @@ COLUMN cometido HEADING 'COMETIDO' FORMAT A50;
 /* Taboa Historico Equipos */
 COLUMN id_centro HEADING 'CENTRO SANITARIO';
 COLUMN num_equipo HEADING 'EQUIPO';
-COLUMN data_hora_ini 'DATA/HORA INICIAL';
-COLUMN data_hora_fin 'DATA/HORA FINAL';
+COLUMN data_hora_ini HEADING 'DATA/HORA INICIAL';
+COLUMN data_hora_fin HEADING 'DATA/HORA FINAL';
 
 /* Taboa Quendas */
 COLUMN id_centro HEADING 'CENTRO SANITARIO';
@@ -119,7 +119,7 @@ COLUMN equipos_quendas.data_hora_quenda HEADING 'PUTA DATA QUENDA';
 /* Taboa Sanitarios e Historicos de equipos */
 COLUMN sanitarios_historico.dni_sanitario HEADING 'PUTO MEDICO';
 COLUMN sanitarios_historico.id_centro HEADING 'CENTRO HISTORICO';
-COLUMN sanitarios_historico.num_equipo HEADNIG ' EQUIPO HISTORICO';
+COLUMN sanitarios_historico.num_equipo HEADING ' EQUIPO HISTORICO';
 COLUMN sanitarios_historico.data_hora_ini HEADING 'DATA HISTORICO';
 
 /* Taboa Materiais */
