@@ -167,3 +167,11 @@ INSERT INTO equipos_quendas (id_centro, num_equipo, data_hora_equipo, data_hora_
 	VALUES (1, 3, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), to_date('12-03-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO equipos_quendas (id_centro, num_equipo, data_hora_equipo, data_hora_quenda)
 	VALUES (1, 4, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), to_date('12-03-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'));
+
+/* En "Sanitarios historico equipos" */
+INSERT INTO sanitarios_historico (dni_sanitario, id_centro, num_equipo, data_hora_ini)
+	VALUES ('12345678T', 1, 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'));
+
+/* En "Material" */
+INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo, data_hora_quenda, tipo_material)
+	VALUES (61351351, 'FFP2 3M A004837721', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 1, to_date('12-03-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Mascarillas');
