@@ -135,7 +135,7 @@ CREATE TABLE medicamentos_tratamentos (
 CREATE TABLE equipos (
 	id_centro NUMERIC(3) CONSTRAINT NN_equipos_id_centro NOT NULL  REFERENCES centros_sanitarios,
 	num_equipo NUMERIC(3) CONSTRAINT NN_equipos_num_equipo NOT NULL,
-	planta NUMERIC(1) CONSTRAINT NN_equipos_planta NOT NULL,,
+	planta NUMERIC(1) CONSTRAINT NN_equipos_planta NOT NULL,
 	cometido VARCHAR(1024) CONSTRAINT NN_equipos_cometido NOT NULL,
 	PRIMARY KEY (id_centro, num_equipo)
 );
