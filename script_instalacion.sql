@@ -77,7 +77,7 @@ CREATE TABLE revisions (
 	PRIMARY KEY (dni_paciente, data_hora) 
 );
 
-/* Creacion da taboa "Historico pacientes" */
+/* Creacion da taboa "Historico estados" */
 CREATE TABLE historico_estados (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_hist_est_dni_paciente NOT NULL REFERENCES pacientes, 
 	data_hora_ini DATE CONSTRAINT NN_hist_est_data_hora_ini NOT NULL,
