@@ -110,11 +110,34 @@ INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, d
 
 /* En "Historico estados" */
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
-	VALUES ('11111111A', to_date('30-04-2020 11:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Enfermo leve.', 1);
+	VALUES ('11111111A', to_date('30-04-2020 23:08:01', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Enfermo leve.', 1);
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions)
-	VALUES ('22222222B', to_date('22-04-2020 19:40:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Enfermo asintomatico confinado na casa.');
+	VALUES ('22222222B', to_date('22-04-2020 14:52:16', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Enfermo asintomatico confinado na casa (PCR).');
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
-	VALUES ('33333333C', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'), 'Enfermo', 'Enfermo grave. Ingresado en UCI.', 35);
+	VALUES ('33333333C', to_date('29-04-2020 12:48:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Enfermo grave. Ingresado en UCI.', 35);
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions)
+	VALUES ('44444444D', to_date('01-05-2020 17:06:08', 'dd-mm-yyyyy hh24:mi:ss'), 'Enfermo', 'Enfermo moi leve confinado na casa.');
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
+	VALUES ('55555555E', to_date('23-04-2020 16:47:06', 'dd-mm-yyyyy hh24:mi:ss'), 'Enfermo', 'Enfermo leve empeorando rapidamente.', 1);
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
+	VALUES ('66666666F', to_date('13-03-2020 05:56:57', 'dd-mm-yyyyy hh24:mi:ss'), 'Enfermo', 'Enfermo grave. Ingresado en planta.', 35);
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
+	VALUES ('77777777G', to_date('04-04-2020 01:48:02', 'dd-mm-yyyyy hh24:mi:ss'), 'Enfermo', 'Enfermo normal.', 35);
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, data_hora_fin, estado, observacions, id_centro)
+	VALUES ('88888888H', to_date('02-02-2020 02:31:06', 'dd-mm-yyyyy hh24:mi:ss'), to_date('25-02-2020 08:30:45', 'dd-mm-yyyy hh24:mi:ss'),'Enfermo', 'Enfermo moi grave. Ingresado en UCI.', 1);
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions)
+	VALUES ('99999999I', to_date('26-04-2020 00:02:01', 'dd-mm-yyyyy hh24:mi:ss'), 'Enfermo', 'Enfermo moi leve confinado na casa.');
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, data_hora_fin, estado, observacions)
+	VALUES ('88888888H', to_date('25-02-2020 08:30:45', 'dd-mm-yyyyy hh24:mi:ss'), to_date('10-03-2020 04:35:07', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Pasa a confinamento no domicilio debido a falta de camas.');
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, data_hora_fin, estado, observacions, id_centro)
+	VALUES ('88888888H', to_date('10-03-2020 04:35:07', 'dd-mm-yyyyy hh24:mi:ss'), to_date('25-03-2020 08:30:45', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Volve a ingreso hospitalario por empeoramento.', 1);
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, data_hora_fin, estado, observacions)
+	VALUES ('88888888H', to_date('25-03-2020 08:30:45', 'dd-mm-yyyyy hh24:mi:ss'), to_date('07-04-2020 15:21:44', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Pasa a confinamento domicialiario denovo.');
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, data_hora_fin, estado, observacions, id_centro)
+	VALUES ('88888888H', to_date('07-04-2020 15:21:44', 'dd-mm-yyyyy hh24:mi:ss'), to_date('25-04-2020 08:30:45', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Gran empeoramento repentino. Ingreso en UCI', 1);
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions)
+	VALUES ('88888888H', to_date('25-04-2020 08:30:45', 'dd-mm-yyyyy hh24:mi:ss'), 'Curado', 'A esperar por enquisa seroepidemioloxica.');
+
 
 /* En "Exploracions" */
 INSERT INTO exploracions (id_exploracion, nome, descricion) 

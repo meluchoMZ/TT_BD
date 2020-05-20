@@ -85,7 +85,7 @@ CREATE TABLE historico_estados (
 	estado VARCHAR(7) CONSTRAINT NN_hist_est_estado NOT NULL CHECK ((estado = 'Curado') OR (estado = 'Enfermo')),
 	observacions VARCHAR(1024),
 	id_centro NUMERIC(3),
-       	PRIMARY KEY (dni_paciente, data_hora_ini)	
+    PRIMARY KEY (dni_paciente, data_hora_ini)	
 );
 
 /* Creacion da taboa "Exploracions" */
