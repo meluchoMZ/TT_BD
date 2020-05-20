@@ -42,11 +42,25 @@ INSERT INTO centro_tipo (id_centro, tipo_mat, stock_minimo, stock_actual)
 
 /* En "Pacientes" */
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro) 
-	VALUES ('11111111A', 'Alicia', 'Alvarez Avila', 'Muller', to_date('01-01-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Boveda N 1, A Corunha', to_date('30-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
+	VALUES ('11111111A', 'Alicia', 'Alvarez Avila', 'Muller', to_date('01-01-1991 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Alexandre Boveda N 1, A Corunha', to_date('30-04-2020 23:08:01', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('22222222B', 'Bernardo', 'Bosforo Bieito', 'Home', to_date('02-02-1992 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Francis Bacon N 2, A Corunha', to_date('22-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
+	VALUES ('22222222B', 'Bernardo', 'Bosforo Bieito', 'Home', to_date('02-02-1992 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Francis Bacon N 2, A Corunha', to_date('22-04-2020 14:52:16', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
-	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', to_date('03-03-1993 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Marie Curie N 2, Santiago de Compostela', to_date('29-04-2020 00:00:00', 'dd-mm-yy hh24:mi:ss'));
+	VALUES ('33333333C', 'Carla', 'Castro Cormelle', 'Muller', to_date('03-03-1993 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Marie Curie N 2, Santiago de Compostela', to_date('29-04-2020 12:48:00', 'dd-mm-yy hh24:mi:ss'));
+INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
+	VALUES ('44444444D', 'Pepe', 'Salas Llanos', 'Home', to_date('04-04-1994 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ San Giordano N 3, Santiago de Compostela', to_date('01-05-2020 17:06:08', 'dd-mm-yy hh24:mi:ss'));
+INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
+	VALUES ('55555555E', 'Evaristo', 'Sobrino Garcia', 'Home', to_date('07-06-1978 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Brenda Paje N 24, A Corunha', to_date('23-04-2020 16:47:06', 'dd-mm-yy hh24:mi:ss'));
+INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
+	VALUES ('66666666F', 'Sabrina', 'Vega Marquez', 'Muller', to_date('17-12-1954 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Ledicia Costas N 12, Santiago de Compostela', to_date('13-03-2020 05:56:57', 'dd-mm-yy hh24:mi:ss'));
+INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
+	VALUES ('77777777G', 'Benjamin', 'Ponce Mira', 'Home', to_date('13-11-1987 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ J.R.R Tolkien N 9, Santiago de Compostela', to_date('04-04-2020 01:48:02', 'dd-mm-yy hh24:mi:ss'));
+INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
+	VALUES ('88888888H', 'Fernando', 'Bilbao Cuevas', 'Home', to_date('02-08-1942 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Neil Armstrong, A Corunha', to_date('02-02-2020 02:31:06', 'dd-mm-yy hh24:mi:ss'));
+INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro)
+	VALUES ('99999999I', 'Maria', 'Esperanza Checa', 'Muller', to_date('22-04-1939 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'R/ Leonhardt Euler, Santiago de Compostela', to_date('26-04-2020 00:02:01', 'dd-mm-yy hh24:mi:ss'));
+
+
 
 /* En "Sanitarios" */
 INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria)
