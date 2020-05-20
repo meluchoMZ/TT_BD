@@ -11,7 +11,12 @@ SELECT dni, nome, apelidos, data_rexistro,
 		WHEN he.id_centro is NULL then 'Chamada'
 		ELSE 'Ingreso Hospitalario'
 	END AS "METODO"
-FROM pacientes p left join historico_estados he on p.dni=he.dni_paciente left join centros_sanitarios cs on he.id_centro=cs.id_centro;
+FROM pacientes p left join historico_estados he on p.dni=he.dni_paciente left join centros_sanitarios cs on he.id_centro=cs.id_centro
+WHERE data_hora_ini = (
+	SELECT MIN(data_hora_ini)
+	FROM historico_estados a 
+	WHERE p.dni=a.dni_paciente
+);
 
 /* PUNTO 2 */
 /* 2: Mostra o identificador e nome completo de todos os pacientes que permanecian confinados na sua casa o 
@@ -31,15 +36,15 @@ hospitais diferentes. Indica tamen cantos hospitais foron. */
 SELECT dni, nome, apelidos, COUNT(*) "VECES INGRESADO"
 FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente
 WHERE  id_centro IS NOT NULL
-GROUP BY dni
+GROUP BY dni, nome, apelidos
 HAVING COUNT(*) >= 2;
-
+ 
 /* 5: Mostra o identificador e nome completo de todos os pacientes que estiveron confinados no seu domicilio 
 en dous ou mais periodos diferentes. Indica tamen cantas veces foron en total. */
 SELECT dni, nome, apelidos, COUNT(*) "VECES CONFINADO"
 FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente
-WHERE id_centro IS NULL
-GROUP BY dni
+WHERE id_centro IS NULL AND estado <> 'Curado'
+GROUP BY dni, nome, apelidos
 HAVING COUNT(*) >= 2;
 
 /* 6: Lista o identificador e nome completo de todos aqueles pacientes que xa foron dados de alta. Mosta tamen
@@ -52,8 +57,8 @@ WHERE estado='Curado';
 /* 7: Elixe un dos pacientes do resultado da consulta 2. Mostra a data e hora das proximas chamadas telefonicas
 programadas de control que lle hai que facer. */
 SELECT dni, nome, apelidos, data_hora, descricion
-FROM pacientes p JOIN revisions r ON p.dni=r.dni_sanitario
-WHERE dni='22222222B' and feita='Non';
+FROM pacientes p JOIN revisions r ON p.dni=r.dni_paciente
+WHERE dni='11111111A' AND feita='Non';
 
 /* 8: Mostra, para o mesmo paciente, o numero de chamadas realizadas ata agora nas que superou os 37 de temperatura
 e rexistrou unha tension sistolica superior a 12. */
