@@ -1,13 +1,17 @@
 /* Consultas para o traballo tutelado de BD (2019/2020)
-	- Opción 1.
-	- Autor: Miguel Blanco Godón.
+	- Opcion 1.
+	- Autor: Miguel Blanco Godon.
 */
 
 /* PUNTO 1 */
 /* 1: Mostra todos os pacientes rexistrados na BD. Indica, para cada un: DNI; nome completo; data na que foi
 rexistrado/a por primeira vez no sistema; metodo de rexistro(chamada/ingreso hospitalario).*/
-SELECT dni, nome, apelidos, data_rexistro, coalesce(nome_centro, 'Chamada') "Metodo de ingreso"
-FROM pacientes p left join historico_estados he on p.dni=he.dni_paciente left join centro_sanitario cs on he.id_centro=cs.id_centro;
+SELECT dni, nome, apelidos, data_rexistro, 
+	CASE 
+		WHEN he.id_centro is NULL then 'Chamada'
+		ELSE 'Ingreso Hospitalario'
+	END AS "METODO"
+FROM pacientes p left join historico_estados he on p.dni=he.dni_paciente left join centros_sanitarios cs on he.id_centro=cs.id_centro;
 
 /* PUNTO 2 */
 /* 2: Mostra o identificador e nome completo de todos os pacientes que permanecian confinados na sua casa o 
@@ -68,7 +72,7 @@ realizou cada exploracion; resultado de cada exploracion. Podes utilizar directa
 
 /* PUNTO 4 */
 /* 12: Mostra, para cada equipo de sanitarios rexistrados na BD: identificador do equipo; nome do centro hospitalario 
-no que traballa; numero ACTUAL de integrantes; e data do último cambio na composicion do equipo. */
+no que traballa; numero ACTUAL de integrantes; e data do ultimo cambio na composicion do equipo. */
 
 /* 13: Elixe un dos equipos do resultado da consulta 12. Mostra a lista (identificador; nome completo; posto; centro
  hospitalario) dos seus membros nunha data concreta (por exemplo, o dia 01 de maio de 2020 as 00:00:00: horas). */
