@@ -22,14 +22,14 @@ WHERE data_hora_ini = (
 /* 2: Mostra o identificador e nome completo de todos os pacientes que permanecian confinados na sua casa o 
 dia 1 de maio de 2020 as 00:00:00h. */
 SELECT dni, nome, apelidos
-FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente 
-WHERE id_centro IS NULL AND (data_hora_ini='01-may-2020' OR data_hora_fin='01-may-2020' OR (data_hora_ini<='01-may-2020' AND 'data_hora_fin' IS NULL));
+FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente
+WHERE id_centro IS NULL AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
 
 /* 3: Mostra o identificador e nome completo de todos os pacientes estaban ingresados nun centro hospitalario
 o dia 1 de maio de 2020 as 00:00:00h. */
 SELECT dni, nome, apelidos
-FROM pacientes p JOIN historico_estados ON p.dni=he.dni_paciente
-WHERE id_centro IS NOT NULL AND (data_hora_ini='01-may-2020' OR data_hora_fin='01-may-2020' OR (data_hora_ini<='01-may-2020' AND 'data_hora_fin' IS NULL));
+FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente
+WHERE id_centro IS NOT NULL AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
 
 /* 4: Mostra o identificador e nome completo de todos os pacientes que estiveron ingresados en polo menos dous
 hospitais diferentes. Indica tamen cantos hospitais foron. */
@@ -58,7 +58,7 @@ WHERE estado='Curado';
 programadas de control que lle hai que facer. */
 SELECT dni, nome, apelidos, data_hora, descricion
 FROM pacientes p JOIN revisions r ON p.dni=r.dni_paciente
-WHERE dni='11111111A' AND feita='Non';
+WHERE dni='22222222B' AND feita='Non';
 
 /* 8: Mostra, para o mesmo paciente, o numero de chamadas realizadas ata agora nas que superou os 37 de temperatura
 e rexistrou unha tension sistolica superior a 12. */

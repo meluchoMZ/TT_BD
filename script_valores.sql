@@ -104,9 +104,11 @@ INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, d
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
 	VALUES ('11111111A', to_date('12-05-2020 10:25:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision do paciente.', 'Non', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
-	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision do paciente.', 'Non', '61681664T');
+	VALUES ('11111111A', to_date('19-05-2020 12:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Segunda revision do paciente.', 'Non', '61681664T');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
 	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomatico.', 'Si', '24651384L');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
+	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Si', '24651384L');
 
 /* En "Historico estados" */
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
@@ -141,15 +143,21 @@ INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions
 
 /* En "Exploracions" */
 INSERT INTO exploracions (id_exploracion, nome, descricion) 
-	VALUES (1, 'Toma de temperatura', 'Procedese a medir a temperatura do paciente.');
+	VALUES (1, 'Temperatura', 'Procedese a medir a temperatura do paciente.');
 INSERT INTO exploracions (id_exploracion, nome, descricion) 
-	VALUES (2, 'Proba de anticorpos PCR', 'Consiste en realizar un test de seroprevalencia do virus COVID-19 no paciente.');
+	VALUES (2, 'Tension sistolica', 'Procedese a medir a tension sistolica do paciente.');
 
 /* En "Revisions e exploracions" */
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado) 
-	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '37.5 C');
+	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 37.5);
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
-	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 1, '36.0 C');
+	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 36);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 13);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 37.7);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 12);
 
 /* En "Tratamentos" */
 INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
