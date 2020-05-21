@@ -157,7 +157,7 @@ INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion,
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
 	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 37.7);
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
-	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 12);
+	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 12);
 
 /* En "Tratamentos" */
 INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
