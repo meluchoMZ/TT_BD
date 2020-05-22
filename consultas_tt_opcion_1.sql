@@ -107,7 +107,8 @@ FROM centros_sanitarios cs JOIN equipos e ON cs.id_centro=e.id_centro JOIN equip
 maio de 2020, as 00:00:00h: nome do medicamento, dose establecida, e identificador e nome completo do sanitario que 
 autorizou ese medicamento. */
 SELECT p.dni, p.nome, p.apelidos, id_medicamento, dosificacion, s.dni, s.nome, s.apelidos
-FROM pacientes p JOIN tratamentos t ON p.dni=t.dni_paciente JOIN medicamentos_tratamentos mt ON (t.dni_paciente=mt.dni_paciente AND t.data_hora_ini=mt.data_hora_ini) JOIN sanitarios ON t.dni_sanitario=s.dni;
+FROM pacientes p JOIN tratamentos t ON p.dni=t.dni_paciente JOIN medicamentos_tratamentos mt ON (t.dni_paciente=mt.dni_paciente AND t.data_hora_ini=mt.data_hora_ini) JOIN sanitarios s ON t.dni_sanitario=s.dni
+WHERE p.dni='11111111A' AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
 
 /* PUNTO 6 */
 /* 16: Para cada tipo de material rexistrado na BD, indica o stock disponhible en cada centro hospitalario. Mostra:

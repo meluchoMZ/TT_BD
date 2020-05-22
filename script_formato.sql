@@ -6,7 +6,7 @@
 
 set pages 50;
 set feed 1;
-set linesize 250;
+set linesize 500;
 
 /* Para controlar os formatos das datas e horas */
 ALTER SESSION SET nls_date_format='dd-Mon-yyyy hh24:mi:ss';
@@ -116,20 +116,20 @@ COLUMN data_hora_fin HEADING 'DATA/HORA FINAL';
 COLUMN incidencias HEADING 'INCIDENCIAS' FORMAT A50;
 
 /* Taboa Equipos e Quendas */
-COLUMN id_centro HEADING 'PUTO CENTRO';
-COLUMN num_equipo HEADING 'PUTO EQUIPO';
-COLUMN data_hora_equipo HEADING 'PUTA DATA EQUIPO';
-COLUMN data_hora_quenda HEADING 'PUTA DATA QUENDA';
+COLUMN id_centro HEADING 'CENTRO';
+COLUMN num_equipo HEADING 'EQUIPO';
+COLUMN data_hora_equipo HEADING 'DATA EQUIPO';
+COLUMN data_hora_quenda HEADING 'DATA QUENDA';
 
 /* Taboa Sanitarios e Historicos de equipos */
-COLUMN dni_sanitario HEADING 'PUTO MEDICO';
+COLUMN dni_sanitario HEADING 'MEDICO';
 COLUMN id_centro HEADING 'CENTRO HISTORICO';
 COLUMN num_equipo HEADING ' EQUIPO HISTORICO';
 COLUMN data_hora_ini HEADING 'DATA HISTORICO';
 
 /* Taboa Materiais */
 COLUMN referencia HEADING 'REFERENCIA';
-COLUMN nome HEADING 'MATERIAL';
+COLUMN nome HEADING 'NOME';
 COLUMN id_centro HEADING 'CENTRO';
 COLUMN data_hora_equipo HEADING 'DATA/HORA DO EQUIPO';
 COLUMN num_equipo HEADING 'EQUIPO';
