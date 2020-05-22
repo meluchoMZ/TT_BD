@@ -109,6 +109,36 @@ INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, d
 	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Positivo PCR. Asintomatico.', 'Si', '24651384L');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
 	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Si', '24651384L');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
+	VALUES ('22222222B', to_date('30-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Segunda revision.', 'Si', '24651384L');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('33333333C', to_date('29-04-2020 23:08:01', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Enfermo moi grave. Necesario respirador.', 'Si', '46356167D');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
+	VALUES ('33333333C', to_date('04-05-2020 09:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Non', '46356167D');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('44444444D', to_date('01-05-2020 17:06:08', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Simplemente un pouco de tose. Sen esputos.', 'Si', '98465167F');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
+	VALUES ('44444444D', to_date('08-05-2020 17:06:08', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Non', '98465167F');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('55555555E', to_date('23-04-2020 16:47:06', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Por agora febre. En aumento.', 'Si', '79865132V');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('55555555E', to_date('28-04-2020 12:45:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Febre alta. Non mellora.', 'Si', '79865132V');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('66666666F', to_date('13-03-2020 05:56:57', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Febre. Custalle respirar.', 'Si', '46356167D');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('66666666F', to_date('20-03-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Mellorando. Baixou a febre.', 'Si', '46356167D');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('77777777G', to_date('04-04-2020 01:48:02', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'O paciente presenta a sintomaloxia xeral.', 'Si', '98465167F');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('77777777G', to_date('12-04-2020 17:15:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'O paciente evoluciona favorablemente.', 'Si', '98465167F');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('88888888H', to_date('02-02-2020 02:31:06', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'O paciente esta moi grave. Febre e tension sistolica alta.', 'Si', '79865132V');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('88888888H', to_date('12-02-2020 16:20:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'O paciente evoluciona favorablemente.', 'Si', '79865132V');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
+	VALUES ('99999999I', to_date('26-04-2020 00:02:01', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'O paciente so presenta unha pouca tose e cansancio xeral.', 'Si', '98465167F');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, fecha, dni_sanitario)
+	VALUES ('99999999I', to_date('12-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Non', '98465167F');
 
 /* En "Historico estados" */
 INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions, id_centro)
@@ -150,6 +180,8 @@ INSERT INTO exploracions (id_exploracion, nome, descricion)
 /* En "Revisions e exploracions" */
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado) 
 	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 37.5);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('11111111A', to_date('30-04-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 11);
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
 	VALUES ('22222222B', to_date('22-04-2020 19:48:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 36);
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
