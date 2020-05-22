@@ -190,6 +190,42 @@ INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion,
 	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 37.7);
 INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
 	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 12);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('22222222B', to_date('30-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 38);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('22222222B', to_date('30-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 13);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('33333333C', to_date('29-04-2020 23:08:01', 'dd-mm-yyyy hh24:mi:ss'), 1, 40);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('33333333C', to_date('29-04-2020 23:08:01', 'dd-mm-yyyy hh24:mi:ss'), 2, 15);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('44444444D', to_date('01-05-2020 17:06:08', 'dd-mm-yyyy hh24:mi:ss'), 1, 36.7);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('55555555E', to_date('23-04-2020 16:47:06', 'dd-mm-yyyy hh24:mi:ss'), 1, 38.3);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('55555555E', to_date('28-04-2020 12:45:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 38.4);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('66666666F', to_date('13-03-2020 05:56:57', 'dd-mm-yyyy hh24:mi:ss'), 1, 39.7);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('66666666F', to_date('13-03-2020 05:56:57', 'dd-mm-yyyy hh24:mi:ss'), 2, 13.1);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('66666666F', to_date('20-03-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 37);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('77777777G', to_date('04-04-2020 01:48:02', 'dd-mm-yyyy hh24:mi:ss'), 1, 37.8);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('77777777G', to_date('04-04-2020 01:48:02', 'dd-mm-yyyy hh24:mi:ss'), 2, 10);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('77777777G', to_date('12-04-2020 17:15:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 36);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('88888888H', to_date('02-02-2020 02:31:06', 'dd-mm-yyyy hh24:mi:ss'), 1, 41.2);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('88888888H', to_date('02-02-2020 02:31:06', 'dd-mm-yyyy hh24:mi:ss'), 2, 14);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('88888888H', to_date('12-02-2020 16:20:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 37.1);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('88888888H', to_date('12-02-2020 16:20:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 12);
+INSERT INTO revisions_exploracions (dni_paciente, data_hora_ini, id_exploracion, resultado)
+	VALUES ('99999999I', to_date('26-04-2020 00:02:01', 'dd-mm-yyyy hh24:mi:ss'), 1, 36.8);
 
 /* En "Tratamentos" */
 INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitario)
