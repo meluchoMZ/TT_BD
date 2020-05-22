@@ -100,7 +100,7 @@ CREATE TABLE revisions_exploracions (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_rev_exp_dni_paciente NOT NULL,
 	data_hora_ini DATE CONSTRAINT NN_rev_exp_data_hora_ini NOT NULL,
 	id_exploracion NUMBER(6) CONSTRAINT NN_rev_exp_id_exploracion NOT NULL REFERENCES exploracions,
-	resultado NUMERIC(10,2);
+	resultado NUMERIC(10,2),
 	PRIMARY KEY (dni_paciente, data_hora_ini, id_exploracion),
 	FOREIGN KEY (dni_paciente, data_hora_ini) REFERENCES revisions
 );
