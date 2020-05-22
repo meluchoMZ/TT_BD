@@ -8,10 +8,10 @@
 rexistrado/a por primeira vez no sistema; metodo de rexistro(chamada/ingreso hospitalario).*/
 SELECT dni, nome, apelidos, data_rexistro, 
 	CASE 
-		WHEN he.id_centro is NULL then 'Chamada'
+		WHEN he.id_centro IS NULL THEN 'Chamada'
 		ELSE 'Ingreso Hospitalario'
 	END AS "METODO"
-FROM pacientes p left join historico_estados he on p.dni=he.dni_paciente left join centros_sanitarios cs on he.id_centro=cs.id_centro
+FROM pacientes p LEFT JOIN historico_estados he ON p.dni=he.dni_paciente LEFT JOIN centros_sanitarios cs ON he.id_centro=cs.id_centro
 WHERE data_hora_ini = (
 	SELECT MIN(data_hora_ini)
 	FROM historico_estados a 
@@ -23,13 +23,13 @@ WHERE data_hora_ini = (
 dia 1 de maio de 2020 as 00:00:00h. */
 SELECT dni, nome, apelidos
 FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente
-WHERE id_centro IS NULL AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
+WHERE id_centro IS NULL AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL)) AND estado='Enfermo';
 
 /* 3: Mostra o identificador e nome completo de todos os pacientes estaban ingresados nun centro hospitalario
 o dia 1 de maio de 2020 as 00:00:00h. */
 SELECT dni, nome, apelidos
 FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente
-WHERE id_centro IS NOT NULL AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
+WHERE id_centro IS NOT NULL AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL)) AND estado='Enfermo';
 
 /* 4: Mostra o identificador e nome completo de todos os pacientes que estiveron ingresados en polo menos dous
 hospitais diferentes. Indica tamen cantos hospitais foron. */
@@ -64,7 +64,7 @@ WHERE dni='22222222B' AND feita='Non';
 e rexistrou unha tension sistolica superior a 12. */
 SELECT dni, p.nome, apelidos, COUNT(*) 
 FROM pacientes p JOIN revisions r ON p.dni=r.dni_paciente JOIN revisions_exploracions re ON r.dni_paciente=re.dni_paciente AND r.data_hora=re.data_hora_ini JOIN exploracions e ON re.id_exploracion=e.id_exploracion
-WHERE dni='22222222B' AND (e.nome='Temperatura' AND resultado>37) OR (e.nome='Tension sistolica' AND resultado>12)
+WHERE dni='22222222B' AND ((e.nome='Temperatura' AND resultado>37) OR (e.nome='Tension sistolica' AND resultado>12))
 GROUP BY dni, p.nome, apelidos;
 
 /* 9: Elixe un dos pacientes do resultado da consulta 3. Mostra a data e hora das proximas revisions periodicas 
@@ -77,16 +77,17 @@ WHERE dni='11111111A' AND feita='Non';
 e rexistrou unha tension sistolica superior a 12. */
 SELECT dni, p.nome, apelidos, COUNT(*)
 FROM pacientes p JOIN revisions r ON p.dni=r.dni_paciente JOIN revisions_exploracions re ON r.dni_paciente=re.dni_paciente AND r.data_hora=re.data_hora_ini JOIN exploracions e ON re.id_exploracion=e.id_exploracion
-WHERE dni='11111111A' AND (e.nome='Temperatura' AND resultado>37) OR (e.nome='Tensions sistolica' AND resultado>12);
+WHERE dni='11111111A' AND ((e.nome='Temperatura' AND resultado>37) OR (e.nome='Tensions sistolica' AND resultado>12))
+GROUP BY dni, p.nome, apelidos;
 
 /* 11: Mostra, para o mesmo paciente: tipo de exploracions realizadas na ultima revision; nome do sanitario/a que 
 realizou cada exploracion; resultado de cada exploracion. Podes utilizar directamente na consulta a data da revision. */
 SELECT p.dni, p.nome, p.apelidos, data_hora_ini, e.nome, resultado, s.dni, s.nome, s.apelidos
 FROM pacientes p JOIN revisions r ON p.dni=r.dni_paciente JOIN revisions_exploracions re  ON r.dni_paciente=re.dni_paciente AND r.data_hora=re.data_hora_ini JOIN exploracions e ON re.id_exploracion=e.id_exploracion JOIN sanitarios s ON r.dni_sanitario=s.dni
-WHERE dni='11111111A' AND data_hora_ini= (
+WHERE p.dni='11111111A' AND data_hora_ini= (
 	SELECT MAX(data_hora_ini)
-	FROM revisions
-	WHERE dni='11111111A'
+	FROM revisions a 
+	WHERE a.dni_paciente='11111111A'
 );
 
 /* PUNTO 4 */
