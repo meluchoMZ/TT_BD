@@ -137,7 +137,7 @@ INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, d
 	VALUES ('88888888H', to_date('12-02-2020 16:20:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'O paciente evoluciona favorablemente.', 'Si', '79865132V');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
 	VALUES ('99999999I', to_date('26-04-2020 00:02:01', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'O paciente so presenta unha pouca tose e cansancio xeral.', 'Si', '98465167F');
-INSERT INTO revisions (dni_paciente, data_hora, descricion, fecha, dni_sanitario)
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
 	VALUES ('99999999I', to_date('12-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Non', '98465167F');
 
 /* En "Historico estados" */
