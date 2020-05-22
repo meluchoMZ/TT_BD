@@ -100,7 +100,7 @@ CREATE TABLE revisions_exploracions (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_rev_exp_dni_paciente NOT NULL,
 	data_hora_ini DATE CONSTRAINT NN_rev_exp_data_hora_ini NOT NULL,
 	id_exploracion NUMBER(6) CONSTRAINT NN_rev_exp_id_exploracion NOT NULL REFERENCES exploracions,
-	resultado NUMERIC(12), 
+	resultado NUMERIC(10,2);
 	PRIMARY KEY (dni_paciente, data_hora_ini, id_exploracion),
 	FOREIGN KEY (dni_paciente, data_hora_ini) REFERENCES revisions
 );
@@ -125,7 +125,7 @@ CREATE TABLE medicamentos (
 CREATE TABLE medicamentos_tratamentos (
 	dni_paciente VARCHAR(9) CONSTRAINT NN_med_trat_dni_paciente NOT NULL,
 	data_hora_ini DATE CONSTRAINT NN_med_trat_data_hora_ini NOT NULL,
-	id_medicamento CONSTRAINT NN_med_trat_id_med NOT NULL REFERENCES medicamentos,
+	id_medicamento NUMBER(8) CONSTRAINT NN_med_trat_id_med NOT NULL REFERENCES medicamentos,
 	dosificacion VARCHAR(512),
 	PRIMARY KEY (dni_paciente, data_hora_ini, id_medicamento),
 	FOREIGN KEY (dni_paciente, data_hora_ini) REFERENCES tratamentos
