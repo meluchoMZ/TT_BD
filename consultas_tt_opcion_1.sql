@@ -106,7 +106,7 @@ GROUP BY nome_centro, e.num_equipo, he.data_hora_ini;
  hospitalario) dos seus membros nunha data concreta (por exemplo, o dia 01 de maio de 2020 as 00:00:00: horas). */
 SELECT he.id_centro, he.num_equipo, dni, nome, apelidos, categoria 
 FROM historico_equipos he JOIN sanitarios_historico sh ON he.id_centro=sh.id_centro AND he.num_equipo=sh.num_equipo AND he.data_hora_ini=sh.data_hora_ini JOIN sanitarios s ON sh.dni_sanitario=s.dni 
-WHERE he.num_equipo=1 AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
+WHERE he.num_equipo=1 AND ((he.data_hora_ini<='01-may-2020 00:00:00' AND he.data_hora_fin>'01-may-2020 00:00:00') OR (he.data_hora_ini<='01-may-2020 00:00:00' AND he.data_hora_fin IS NULL));
 
 /* 14: Indica, para cada centro hospitalario rexistrado na BD, que equipo (ou equipos) estara de garda o 01 de maio 
 de 2020 as 22:00:00. Mostra o identificador do equipo, o nome do centro hospitalario, e a data de inicio e fin da 

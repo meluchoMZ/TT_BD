@@ -111,6 +111,10 @@ INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario
 	VALUES ('22222222B', to_date('24-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Primeira revision.', 'Si', '24651384L');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
 	VALUES ('22222222B', to_date('30-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Segunda revision.', 'Si', '24651384L');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
+	VALUES ('22222222B', to_date('06-05-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Terceira revision.', 'Non', '24651384L');
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
+	VALUES ('22222222B', to_date('13-05-2020 13:45:00', 'dd-mm-yyyy hh24:mi:ss'), 'Cuarta revision.', 'Non', '24651384L');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, entrevista, feita, dni_sanitario)
 	VALUES ('33333333C', to_date('29-04-2020 23:08:01', 'dd-mm-yyyy hh24:mi:ss'), 'Consulta inicial.', 'Enfermo moi grave. Necesario respirador.', 'Si', '46356167D');
 INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario)
