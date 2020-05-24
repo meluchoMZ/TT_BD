@@ -111,7 +111,9 @@ WHERE he.num_equipo=1 AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_
 /* 14: Indica, para cada centro hospitalario rexistrado na BD, que equipo (ou equipos) estara de garda o 01 de maio 
 de 2020 as 22:00:00. Mostra o identificador do equipo, o nome do centro hospitalario, e a data de inicio e fin da 
 quenda que esta cubrindo o equipo no centro hospitalario. */
-
+SELECT he.id_centro, he.num_equipo, dia_hora_ini, dia_hora_fin 
+FROM historico_equipos he JOIN equipos_quendas eq ON he.id_centro=eq.id_centro AND he.num_equipo=eq.num_equipo AND he.data_hora_ini=eq.data_hora_equipo JOIN quendas q ON eq.data_hora_quenda=q.dia_hora_ini 
+WHERE dia_hora_ini<='01-may-2020 22:00:00' AND dia_hora_fin>='01-may-2020 22:00:00';
 
 /* PUNTO 5 */
 /* 15: Elixe a un dos pacientes do resultado da consulta 3. Mostra o tratamento que tinha establecido o dia 01 de 
@@ -132,10 +134,16 @@ FROM centros_sanitarios cs JOIN centro_tipo ct ON cs.id_centro=ct.id_centro JOIN
 /* 17: Elixe a un dos equipos da consulta 14. Queremos saber as unidades concretas de material foron usadas durante
 a quenda cuberta na dita consulta 14 polo equipo en cuestion. Mostra a referencia do material, e o tipo/nome de 
 material. */
+SELECT m.id_centro, num_equipo, dia_hora_ini, dia_hora_fin, referencia, nome, tipo_material
+FROM material m JOIN quendas q ON m.data_hora_quenda=q.dia_hora_ini
+WHERE dia_hora_ini<='01-may-2020 22:00:00' AND dia_hora_fin>='01-may-2020 22:00:00';
 
 /* TRES CONSULTAS DE TEMA LIBRE */
 /* 18: Consulta cun join exterior de tres taboas ou mais. */
 
+
 /* 19: Consulta con expresion de consulta. */
 
+
 /* 20: Consulta con subconsulta de fila. */
+
