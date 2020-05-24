@@ -269,7 +269,9 @@ INSERT INTO historico_equipos (id_centro, num_equipo, data_hora_ini)
 INSERT INTO quendas (id_centro, dia_hora_ini, dia_hora_fin)
 	VALUES (1, to_date('12-03-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), to_date('12-03-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'));
 INSERT INTO quendas (id_centro, dia_hora_ini, dia_hora_fin)
-	VALUES (1, to_date('12-03-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'), to_date('12-03-2020 00:30:00', 'dd-mm-yyyy hh24:mi:ss'));
+	VALUES (1, to_date('12-03-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'), to_date('13-03-2020 00:30:00', 'dd-mm-yyyy hh24:mi:ss'));
+INSERT INTO quendas (id_centro, dia_hora_ini, dia_hora_fin)
+	VALUES (1, to_date('01-05-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'), to_date('02-05-2020 00:30:00', 'dd-mm-yyyy hh24:mi:ss'));
 
 /* En "Equipos e quendas" */
 INSERT INTO equipos_quendas (id_centro, num_equipo, data_hora_equipo, data_hora_quenda)
@@ -308,3 +310,9 @@ INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo,
 	VALUES (35168513, 'S3505CEC', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 3, to_date('12-03-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Batas');
 INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo, data_hora_quenda, tipo_material)
 	VALUES (13513515, 'FS3545CEA', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 4, to_date('12-03-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'),'Batas');
+INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo, data_hora_quenda, tipo_material)
+	VALUES (12342354, 'FFP2 3M A004837723', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 1, to_date('01-05-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Mascarillas');
+INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo, data_hora_quenda, tipo_material)
+	VALUES (12341234, 'Nitrilo tamanho L', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 1, to_date('01-05-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Luvas');
+INSERT INTO material (referencia, nome, id_centro, data_hora_equipo, num_equipo, data_hora_quenda, tipo_material)
+	VALUES (35634563, 'Uvex 9161012', 1, to_date('12-03-2020 08:00:00', 'dd-mm-yyyy hh24:mi:ss'), 1, to_date('01-05-2020 16:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'Lentes');

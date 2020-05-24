@@ -77,7 +77,7 @@ WHERE dni='11111111A' AND feita='Non';
 e rexistrou unha tension sistolica superior a 12. */
 SELECT dni, p.nome, apelidos, COUNT(*)
 FROM pacientes p JOIN revisions r ON p.dni=r.dni_paciente JOIN revisions_exploracions re ON r.dni_paciente=re.dni_paciente AND r.data_hora=re.data_hora_ini JOIN exploracions e ON re.id_exploracion=e.id_exploracion
-WHERE dni='11111111A' AND ((e.nome='Temperatura' AND resultado>37) OR (e.nome='Tensions sistolica' AND resultado>12))
+WHERE dni='11111111A' AND ((e.nome='Temperatura' AND resultado>37) OR (e.nome='Tension sistolica' AND resultado>12))
 GROUP BY dni, p.nome, apelidos;
 
 /* 11: Mostra, para o mesmo paciente: tipo de exploracions realizadas na ultima revision; nome do sanitario/a que 
@@ -93,15 +93,25 @@ WHERE p.dni='11111111A' AND data_hora_ini= (
 /* PUNTO 4 */
 /* 12: Mostra, para cada equipo de sanitarios rexistrados na BD: identificador do equipo; nome do centro hospitalario 
 no que traballa; numero ACTUAL de integrantes; e data do ultimo cambio na composicion do equipo. */
+SELECT nome_centro, e.num_equipo, he.data_hora_ini, COUNT(dni) "INTEGRANTES"
+FROM centros_sanitarios cs JOIN equipos e ON cs.id_centro=e.id_centro JOIN historico_equipos he ON e.id_centro=he.id_centro AND e.num_equipo=he.num_equipo LEFT JOIN sanitarios_historico sh ON he.id_centro=sh.id_centro AND he.num_equipo=sh.num_equipo AND he.data_hora_ini=sh.data_hora_ini LEFT JOIN sanitarios s ON sh.dni_sanitario=s.dni 
+WHERE he.data_hora_ini= (
+	SELECT MAX(data_hora_ini) 
+	FROM historico_equipos sub
+	WHERE sub.num_equipo=e.num_equipo
+)
+GROUP BY nome_centro, e.num_equipo, he.data_hora_ini;
 
 /* 13: Elixe un dos equipos do resultado da consulta 12. Mostra a lista (identificador; nome completo; posto; centro
  hospitalario) dos seus membros nunha data concreta (por exemplo, o dia 01 de maio de 2020 as 00:00:00: horas). */
+SELECT he.id_centro, he.num_equipo, dni, nome, apelidos, categoria 
+FROM historico_equipos he JOIN sanitarios_historico sh ON he.id_centro=sh.id_centro AND he.num_equipo=sh.num_equipo AND he.data_hora_ini=sh.data_hora_ini JOIN sanitarios s ON sh.dni_sanitario=s.dni 
+WHERE he.num_equipo=1 AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
 
 /* 14: Indica, para cada centro hospitalario rexistrado na BD, que equipo (ou equipos) estara de garda o 01 de maio 
 de 2020 as 22:00:00. Mostra o identificador do equipo, o nome do centro hospitalario, e a data de inicio e fin da 
 quenda que esta cubrindo o equipo no centro hospitalario. */
-SELECT nome_centro, e.num_equipo, data_hora_quenda
-FROM centros_sanitarios cs JOIN equipos e ON cs.id_centro=e.id_centro JOIN equipos_quendas eq ON (e.id_centro=eq.id_centro AND e.num_equipo=eq.num_equipo);
+
 
 /* PUNTO 5 */
 /* 15: Elixe a un dos pacientes do resultado da consulta 3. Mostra o tratamento que tinha establecido o dia 01 de 
@@ -109,13 +119,13 @@ maio de 2020, as 00:00:00h: nome do medicamento, dose establecida, e identificad
 autorizou ese medicamento. */
 SELECT p.dni, p.nome, p.apelidos, id_medicamento, dosificacion, s.dni, s.nome, s.apelidos
 FROM pacientes p JOIN tratamentos t ON p.dni=t.dni_paciente JOIN medicamentos_tratamentos mt ON (t.dni_paciente=mt.dni_paciente AND t.data_hora_ini=mt.data_hora_ini) JOIN sanitarios s ON t.dni_sanitario=s.dni
-WHERE p.dni='11111111A' AND ((data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin>'01-may-2020 00:00:00') OR (data_hora_ini<='01-may-2020 00:00:00' AND data_hora_fin IS NULL));
+WHERE p.dni='22222222B' AND ((t.data_hora_ini<='01-may-2020 00:00:00' AND t.data_hora_fin>'01-may-2020 00:00:00') OR (t.data_hora_ini<='01-may-2020 00:00:00' AND t.data_hora_fin IS NULL));
 
 /* PUNTO 6 */
 /* 16: Para cada tipo de material rexistrado na BD, indica o stock disponhible en cada centro hospitalario. Mostra:
 nome do material; nome do centro hospitalario; unidades disponhibles no centro; limiar minimo de stock no centro; 
 e diferencia entre eles. */
-SELECT tipo, nome_centro, stock_actual, stock_minimo, stock_actual - stock_minimo 'DIFERENZA'
+SELECT tipo, nome_centro, stock_actual, stock_minimo, stock_actual - stock_minimo "DIFERENZA"
 FROM centros_sanitarios cs JOIN centro_tipo ct ON cs.id_centro=ct.id_centro JOIN tipo_material tm ON ct.tipo_mat=tm.tipo;
 
 /* PUNTO 7 */
