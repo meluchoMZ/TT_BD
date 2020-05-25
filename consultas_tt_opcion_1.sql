@@ -140,10 +140,38 @@ WHERE dia_hora_ini<='01-may-2020 22:00:00' AND dia_hora_fin>='01-may-2020 22:00:
 
 /* TRES CONSULTAS DE TEMA LIBRE */
 /* 18: Consulta cun join exterior de tres taboas ou mais. */
-
+/* Esta consulta amosa o dni, nome, apelidos e ultima localizacion rexistrada do paciente. Se non esta ingresado aparece 'Confinamento domiciliario'. */
+SELECT dni, nome, apelidos, data_hora_ini,
+	CASE
+		WHEN he.id_centro IS NULL THEN 'Confinamento domiciliario'
+		ELSE nome_centro 
+	END AS "LOCALIZACION"
+FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente LEFT JOIN centros_sanitarios cs ON he.id_centro=cs.id_centro
+WHERE data_hora_ini = (
+	SELECT MAX(data_hora_ini)
+	FROM historico_estados a
+	WHERE p.dni=a.dni_paciente
+);
 
 /* 19: Consulta con expresion de consulta. */
-
+/* Esta consulta amosa para cada exploracion de temperatura, o paciente ao que se lle fixo a exploracion e a diferenza entre esa medicion e a maxima medicion de temperatura rexistrada na base de datos. */
+SELECT dni, p.nome, apelidos, e.nome, (
+	SELECT MAX(resultado)
+	FROM revisions_exploracions re JOIN exploracions e ON re.id_exploracion=e.id_exploracion
+	WHERE nome='Temperatura'
+) - resultado "Dif fronte a MAX rexistrada"
+FROM pacientes p JOIN revisions r ON p.dni=r.dni_paciente JOIN revisions_exploracions re ON r.dni_paciente=re.dni_paciente AND r.data_hora=re.data_hora_ini JOIN exploracions e ON re.id_exploracion=e.id_exploracion
+WHERE e.nome='Temperatura';
 
 /* 20: Consulta con subconsulta de fila. */
-
+/* Esta consulta amosa todos os pacientes cuxa ultima localizacion rexistrada coincida con algun centro sanitario rexistrado na BD. */
+SELECT dni, nome, apelidos, nome_centro
+FROM pacientes p JOIN historico_estados he ON p.dni=he.dni_paciente LEFT JOIN centros_sanitarios cs ON he.id_centro=cs.id_centro
+WHERE nome_centro IN (
+	SELECT nome_centro
+	FROM centros_sanitarios
+) AND data_hora_ini = (
+	SELECT MAX(data_hora_ini)
+	FROM historico_estados a
+	WHERE he.dni_paciente=a.dni_paciente
+);
