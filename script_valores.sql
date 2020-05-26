@@ -238,10 +238,10 @@ INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitari
 	VALUES ('22222222B', to_date('23-04-2020 08:30:00', 'dd-mm-yyyy hh24:mi:ss'), 'So tomar se aparecen sintomas. Nese caso, chamar inmediatamente.', '24651384L');
 
 /* En "Medicamentos" */
+INSERT INTO medicamentos (id_medicamento, nome, posoloxia)
+	VALUES (68435168, 'Fluimucil', 'Tres tomas ao dia, 5 mililitros por toma.');
 INSERT INTO medicamentos (id_medicamento, posoloxia)
-	VALUES (68435168, 'Tres tomas ao dia, 5 mililitros por toma.');
-INSERT INTO medicamentos (id_medicamento, posoloxia)
-	VALUES (68135884, 'Unha unica toma ao dia, 600 miligramos');
+	VALUES (68135884, 'Paracetamol 600mg', 'Unha unica toma ao dia, 600 miligramos');
 
 /* En "Medicamentos e tratamentos" */
 INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini, id_medicamento, dosificacion)

@@ -118,6 +118,7 @@ CREATE TABLE tratamentos (
 /* Creacion da taboa "Medicamentos" */
 CREATE TABLE medicamentos (
 	id_medicamento NUMBER(8) CONSTRAINT NN_medicamentos_id_med NOT NULL CONSTRAINT PK_medicamentos PRIMARY KEY,
+	nome VARCHAR(100) CONSTRAINT NN_medicamentos_nome NOT NULL,
 	posoloxia VARCHAR(256) CONSTRAINT NN_medicamentos_posoloxia NOT NULL
 );
 

@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage[galician]{babel}
+
+\begin{document}
+
+\title{Bases de datos: Traballo tutelado
+\newline
+Opción 1}
+\author{Miguel Blanco Godón}
+\date{Maio 2020}
+\maketitle
+
+\section{Introdución}
+O obxectivo deste traballo tutelado foi o deseño conceptual, lóxico e implementación dunha base de datos que servise un problema da vida real. Concretamente había que deseñar unha base de datos para que o SARS-CoV-2 poida realizar o seguimento dos casos de COVID-19, para o cal debemos xestionar información sobre centros, pacientes, persoal sanitario e material.
+\section{Descrición do dominio}
+Sobre o enunciado da opción 1, fixen as seguintes suposicións en puntos ambiguos:
+\begin{itemize}
+	\item Os tratamentos son considerados entres inmutábeis ligados a un paciente, polo cal ante calquera variación dalgún compoñente pasa a ser considerado un novo tratamento. Por exemplo, se un paciente toma paracetamol de 600 gramos tres veces ao día. Se posteriormente, por atenuación da sintomaloxía do paciente se reduce a dose a dúas tomas diarias, pasaría a considerase outro tratamento distinto.
+	\item Os equipos considéranse entes inmutábeis ligados a un centro sanitario cun cometido específico para a planta asignada. Debido a isto, caquer cambio tanto de cometido, como de planta considérase un novo equipo. Os equipos están formados por sanitarios, polo cal calquera cambio nun sanitario crea un novo estado de equipo, pero non outro equipo, posto que mentres a planta e o cometido sexa o mesmo. Ante un cambio de integrantes, ese cambio rexistraríase nun histórico.
+	\item As quendas considéranse entes inmutábeis ligados a un centro sanitario. Cada quenda ocorre entre dúas datas e horas especificas. Son simplemente un período de tempo, polo cal varios equipos poden ocupar as mesmas quendas.
+	\item O material divídese en dúas categorías: Tipos de material e material concreto. Os tipos de material identificarían un tipo de obxecto, mentres que o material identificaría un elemento concreto dese tipo. Por exemplo: as luvas cirúrxicas son un tipo de material. Un par de luvas con 2 referencias concretas e distinguíbeis de toda-las outras luvas sería ese material.
+\end{itemize}
+\end{document}
