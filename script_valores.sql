@@ -240,7 +240,7 @@ INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions, dni_sanitari
 /* En "Medicamentos" */
 INSERT INTO medicamentos (id_medicamento, nome, posoloxia)
 	VALUES (68435168, 'Fluimucil', 'Tres tomas ao dia, 5 mililitros por toma.');
-INSERT INTO medicamentos (id_medicamento, posoloxia)
+INSERT INTO medicamentos (id_medicamento, nome, posoloxia)
 	VALUES (68135884, 'Paracetamol 600mg', 'Unha unica toma ao dia, 600 miligramos');
 
 /* En "Medicamentos e tratamentos" */
