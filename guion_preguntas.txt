@@ -1,0 +1,98 @@
+Este e o guion a seguir para responder as preguntas do video. A idea e que
+quede un video fluido e sen fallos para que dure o menos posibel e se note que
+esta traballado. 
+
+1. - Explica como rexistrarias na tua BD esta informacion relativa a un
+paciente:
+	- 1/4/2020: Rexistrado no sistema. Comeza confinado na casa.
+O primeiro paso seria insertar este paciente ta taboa PACIENTES:
+
+INSERT INTO pacientes (dni, nome, apelidos, sexo, data_nacemento, enderezo, data_rexistro) VALUES ('13243546X', 'Edmundo', 'Dantes', 'Home', to_date('24-02-1815 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Castelo de IF', to_date('01-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'));
+
+En caso de ter telefono movil, este ou estes iniririanse ta taboa
+TELEFONOS_PACIENTES:
+INSERT INTO telefonos_pacientes (dni_paciente, tlf) VALUES ('13243546X',678912345);
+
+Posteriormente, insirese este paciente na taboa HISTORICO_ESTADOS para
+poder levar o rexistro temporal da sua estadia:
+Como esta confinado na casa, deixase o campo "id_centro" sen cubrir,
+indicando un nulo. 
+
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado,observacions) VALUES ('13243546X', to_date('01-04-2020 00:00:00', 'dd-mm-yyyyhh24:mi:ss'), 'Enfermo', 'Leve, sen febre nin dificultade para respirar.');
+
+A partires de aqui, comeza a cambiar de estado durante o periodo de
+recuperacion. Un cambio de estado implica unha nova entrada na taboa.
+Neste punto, debemos comprobar que o centro A estea rexistrado na BD. Para iso
+facemos unha consulta simple na taboa centros_sanitarios:
+
+SELECT id_centro, nome_centro FROM centros_sanitarios;
+
+De non estar, ins�rese a informaci�n dese centro para non provocar unha
+violacion da restriccion de integridade referencial. Neste caso:
+
+INSERT INTO centros_sanitarios (id_centro, nome_centro, enderezo) VALUES (65,'A', 'Ficticio non existente');
+
+Agora falta actualizar a informacion da fin do estado anterior:
+
+UPDATE historico_estados SET data_hora_fin = to_date('04-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss') WHERE dni_paciente='13243546X' AND  data_hora_ini='01-abr-2020 00:00:00';
+
+E asi cos outros.
+
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado,observacions, id_centro) VALUES ('13243546X', to_date('04-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Empeorou sensiblemente.',  65);
+
+A partires daqui so e seguir insirindo a informacion a cada novo cambio de
+estado:
+UPDATE historico_estados SET data_hora_fin = to_date('06-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss') WHERE dni_paciente='13243546X' AND  data_hora_ini='04-abr-2020 00:00:00';
+
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado,observacions) VALUES ('13243546X', to_date('06-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Mellora rapidamente, non necesario continuar a hospitalizacion');
+
+UPDATE historico_estados SET data_hora_fin = to_date('08-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss') WHERE dni_paciente='13243546X' AND  data_hora_ini='06-abr-2020 00:00:00';
+
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado,observacions, id_centro) VALUES ('13243546X', to_date('08-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enfermo', 'Empeorou. Necesaria hospitalizacion', 65);
+
+UPDATE historico_estados SET data_hora_fin = to_date('10-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss') WHERE dni_paciente='13243546X' AND  data_hora_ini='08-abr-2020 00:00:00';
+
+INSERT INTO historico_estados (dni_paciente, data_hora_ini, estado, observacions) VALUES ('13243546X', to_date('10-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Curado', 'Dado de alta.');
+
+	2 Explica como rexistrarias na tua BD esta informacion relativa a un
+paciente ingresado no hospital:
+
+O primeiro paso seria crear ese tratamento. Para iso hay que ver se existe na
+BD o sanitario Dr.X. Para iso faise unha consulta na taboa sanitarios:
+
+SELECT dni, nome FROM sanitarios;
+
+Se non existe o medico, pois insirese:
+INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo, categoria) VALUES ('00000001A', 'Dr.X', '.', 'Muller', to_date('01-01-1980 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enderezo do Dr.X', 'Medicina');
+
+Despois de inserir o medico, pois podemos meter o tratamento:
+
+INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions,dni_sanitario) VALUES ('13243546X', to_date('06-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Calquera cousa', '00000001A');
+
+Con todo, inda non temos asignado ningun medicamento ao tratamento. Para iso,
+inserimos na taboa MEDICAMENTOS:
+
+INSERT INTO medicamentos (id_medicamento, nome, posoloxia) VALUES (1,'Paracetamol 200gr', 'Dose recomendada do prospecto');
+
+INSERT INTO medicamentos (id_medicamento, nome, posoloxia) VALUES (2,'Bisprolol 1,25', 'Dose recomendada do prospecto');
+
+Unha vez feito iso, so resta asignar eses medicamentos ao tratamento:
+
+INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini,id_medicamento, dosificacion) VALUES ('13243546X', to_date('06-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 'Uno al dia');
+
+INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini,id_medicamento, dosificacion) VALUES ('13243546X', to_date('06-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 'Uno al dia');
+
+A modificacion do tratamento, supon un novo medico, polo cal hai que inserilo.
+
+INSERT INTO sanitarios (dni, nome, apelidos, sexo, data_nacemento, enderezo,categoria) VALUES ('00000002B', 'Dr.Y', '.', 'Home', to_date('01-01-1970 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Enderezo Dr.Y', 'Medicina');
+
+INSERT INTO tratamentos (dni_paciente, data_hora_ini, observacions,dni_sanitario) VALUES ('13243546X', to_date('08-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 'Calquera coisa', '00000002B');
+
+INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini,id_medicamento, dosificacion) VALUES ('13243546X', to_date('08-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 1, 'Tres al dia');
+
+INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini,id_medicamento, dosificacion) VALUES ('13243546X', to_date('08-04-2020 00:00:00', 'dd-mm-yyyy hh24:mi:ss'), 2, 'Uno al dia');
+
+
+
+/*/*/*//*/*//*/**/*/ CONSULTA DE MEDICAMENTOS POR TRATAMENTO E PACIENTE
+SELECT p.nome, p.apelidos, mt.data_hora_ini, m.nome, dosificacion, s.nome FROM pacientes p JOIN tratamentos t ON p.dni=t.dni_paciente JOIN medicamentos_tratamentos mt ON t.dni_paciente=mt.dni_paciente AND t.data_hora_ini=mt.data_hora_ini JOIN medicamentos m ON mt.id_medicamento=m.id_medicamento JOIN sanitarios s ON t.dni_sanitario=s.dni WHERE p.dni='13243546X';
