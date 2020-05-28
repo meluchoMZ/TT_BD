@@ -96,3 +96,9 @@ INSERT INTO medicamentos_tratamentos (dni_paciente, data_hora_ini,id_medicamento
 
 /*/*/*//*/*//*/**/*/ CONSULTA DE MEDICAMENTOS POR TRATAMENTO E PACIENTE
 SELECT p.nome, p.apelidos, mt.data_hora_ini, m.nome, dosificacion, s.nome FROM pacientes p JOIN tratamentos t ON p.dni=t.dni_paciente JOIN medicamentos_tratamentos mt ON t.dni_paciente=mt.dni_paciente AND t.data_hora_ini=mt.data_hora_ini JOIN medicamentos m ON mt.id_medicamento=m.id_medicamento JOIN sanitarios s ON t.dni_sanitario=s.dni WHERE p.dni='13243546X';
+
+
+INSERTAR REVISIONS
+INSERT INTO revisions (dni_paciente, data_hora, descricion, feita, dni_sanitario) VALUES ('13243546X', to_date('07-06-2020 11:35:00', 'dd-mm-yyyy hh24:mi:ss'), 'Revision protocolaria.', 'Non', '00000002B');
+
+https://web.microsoftstream.com/video/2d7fcd49-0b62-4a30-9b2f-e3fd0aac7b35
